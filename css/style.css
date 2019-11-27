@@ -1,23 +1,81 @@
-*{padding: 0px; margin: 0px;}
+*{padding: 0px; margin: 0px;font-size: 20px;}
 
-/*body{ background:linear-gradient(35deg, #00fff7, #9198e5); }*/
+body{ background:; font-family: 'PT Sans', sans-serif;}
+
+h1{font-size: 28px}
+
+h3{font-size: 20px;font-weight: 200;}
+
+
 
 /* Header */
 
-header{}
-
-ul{
-	text-align: center;
+header{
+	height: 350px;
+	background: #913f3f;
 }
 
-li{
+header ul{
+	padding: 20px 0px;
+	text-align: right;
+}
+
+header li{
 	display: inline;
 }
 
-a{color: ;text-decoration:none;padding: 20px;}
-a:hover{color:;}
+header a{color: white;text-decoration:none;padding: 0px 30px 20px 0px;}
+header a:hover{color: black;}
+
+.logoDiv{
+	font-size: 50px;
+	padding: 150px 0px 0px 0px;
+	color: white;
+	text-align: center;
+}
 
 /* Main */
 
+main{
+	min-height: 400px;
+}
+
+main ul{
+	padding: 10px 20px;
+}
+
+.mainContainer{
+	width: 70%;
+	padding: 40px 0px;
+	margin: 0px auto;
+}
+
+.mainBlock{
+	padding: 60px 100px 0px 0px;
+}
 
 /* Footer */
+
+footer{
+	color: #2e2020;
+}
+
+.footerBox{
+	display:inline-flex;
+	text-align: center;
+	width: 100%;
+}
+
+.footerLinkDiv{
+	font-size: 14px;
+	width: 100%;
+	text-align: right;
+	padding: 40px;
+}
+
+.footerCopyDiv{
+	font-size: 14px;
+	width: 100%;
+	text-align: left;
+	padding: 40px;
+}

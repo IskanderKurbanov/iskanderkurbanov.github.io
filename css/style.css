@@ -1,0 +1,23 @@
+*{padding: 0px; margin: 0px;}
+
+/*body{ background:linear-gradient(35deg, #00fff7, #9198e5); }*/
+
+/* Header */
+
+header{}
+
+ul{
+	text-align: center;
+}
+
+li{
+	display: inline;
+}
+
+a{color: ;text-decoration:none;padding: 20px;}
+a:hover{color:;}
+
+/* Main */
+
+
+/* Footer */

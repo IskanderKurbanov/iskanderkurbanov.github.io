@@ -1,9 +1,9 @@
 *{padding: 0px; margin: 0px;font-size: 20px;}
 
-body{ background:; font-family: 'PT Sans', sans-serif;}
+body{ background:; font-family: 'Rubik Mono One', sans-serif;}
 
 h1{font-size: 28px}
-
+h2{font-size: 24px;}
 h3{font-size: 20px;font-weight: 200;}
 
 
@@ -11,12 +11,16 @@ h3{font-size: 20px;font-weight: 200;}
 /* Header */
 
 header{
-	height: 350px;
-	background: #913f3f;
+	font-size:;
 }
 
+header nav{background: #913f3f;}
+
+header h1{font-size: 50px; padding: 0px;margin: 0px;text-transform: lowercase;}
+header h2{font-size: 30px; color: black;font-family: 'Source Sans Pro', sans-serif;text-transform: uppercase;}
+
 header ul{
-	padding: 20px 0px;
+	padding: 15px 0px;
 	text-align: right;
 }
 
@@ -24,12 +28,14 @@ header li{
 	display: inline;
 }
 
-header a{color: white;text-decoration:none;padding: 0px 30px 20px 0px;}
-header a:hover{color: black;}
+header a{color: white;text-decoration:none;padding: 15px 20px;}
+header a:hover{color: black;background: white; transition: all 0.2s;}
+
+
 
 .logoDiv{
-	font-size: 50px;
-	padding: 150px 0px 0px 0px;
+	background: #913f3f;
+	padding: 200px 0px 50px 0px;
 	color: white;
 	text-align: center;
 }
@@ -38,7 +44,10 @@ header a:hover{color: black;}
 
 main{
 	min-height: 400px;
+	font-family: 'Source Sans Pro', sans-serif;
 }
+
+main h2{padding: 10px 5px;}
 
 main ul{
 	padding: 10px 20px;
@@ -58,24 +67,25 @@ main ul{
 
 footer{
 	color: #2e2020;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .footerBox{
-	display:inline-flex;
+	/*display:inline-flex;*/
 	text-align: center;
 	width: 100%;
 }
 
 .footerLinkDiv{
 	font-size: 14px;
-	width: 100%;
-	text-align: right;
-	padding: 40px;
+	padding: 20px;
 }
 
 .footerCopyDiv{
 	font-size: 14px;
-	width: 100%;
-	text-align: left;
-	padding: 40px;
+	padding: 20px;
 }
+
+
+
+

@@ -1,9 +1,10 @@
 *{padding: 0px; margin: 0px;font-size: 20px;}
 
-body{ background:; font-family: 'Rubik Mono One', sans-serif;}
+body{ background:;font-family: 'Open Sans', sans-serif;}
 
-h1{font-size: 28px}
-h2{font-size: 24px;}
+h1{font-size: 32px}
+h2{font-size: 26px;}
+h3{font-size: 24px;}
 h3{font-size: 20px;font-weight: 200;}
 
 
@@ -16,7 +17,7 @@ header{
 
 header nav{background: #913f3f;}
 
-header h1{font-size: 50px; padding: 0px;margin: 0px;text-transform: lowercase;}
+header h1{font-size: 50px; padding: 0px;margin: 0px;text-transform: uppercase;}
 header h2{font-size: 30px; color: black;font-family: 'Source Sans Pro', sans-serif;text-transform: uppercase;}
 
 header ul{
@@ -25,6 +26,7 @@ header ul{
 }
 
 header li{
+	list-style:none;
 	display: inline;
 }
 
@@ -48,19 +50,21 @@ main{
 }
 
 main h2{padding: 10px 5px;}
+main h3{padding: 1px 10px;}
 
 main ul{
 	padding: 10px 20px;
 }
 
 .mainContainer{
-	width: 70%;
 	padding: 40px 0px;
-	margin: 0px auto;
 }
 
 .mainBlock{
+	width: 70%;
 	padding: 60px 100px 0px 0px;
+	margin: 0px auto;
+	min-height: 400px;
 }
 
 /* Footer */
@@ -68,6 +72,16 @@ main ul{
 footer{
 	color: #2e2020;
 	font-family: 'Source Sans Pro', sans-serif;
+}
+
+footer a{
+	color: #2e2020;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+}
+
+footer li{
+	display: inline;
 }
 
 .footerBox{
@@ -89,3 +103,18 @@ footer{
 
 
 
+
+
+#scrollToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      opacity: 0.3;
+      transition: all 0.5s ease-in;
+}
+
+#scrollToTop:hover {
+	opacity: 1;
+}

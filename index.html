@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kurbanov Iskander|Portfolio</title>
-	<link rel="shortcut icon" href="img/k.png" type="image/png">
+	<title>Kurbanov Iskander | Portfolio</title>
+	
 	<meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Source+Sans+Pro:300&display=swap" rel="stylesheet">
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/scroll.js"></script>
+	<script type="text/javascript" src="js/headerColor.js"></script>
+	<script type="text/javascript" src="js/topBt.js"></script>
+
+	<link rel="shortcut icon" href="img/k.png" type="image/png">
 </head>
 <body>
 	<header>
-		<nav id="menu">
+		<nav id="menu" class="Fmenu">
 			<ul>
-				<li><a href="#Main">Главная</a></li><li><a href="#yak2">Обо мне</a></li><li><a href="#yak3">Архив</a></li>
+				<li><a href="#Main">Главная</a></li><li><a href="#About">Обо мне</a></li><li><a href="#Arc">Архив</a></li>
 			</ul>
 		</nav>
 
@@ -23,24 +27,23 @@
 			<h2>Kurbanov Iskander</h2>
 		</div>
 	</header>
-
 	<main>
-		<div class="mainContainer" style="background:;">
-			<div class="mainBlock">
+		<div class="mainContainer " style="text-align:center;">
+			<div class="mainBlock mainBlockC">
 				<h1>Проба пера!</h1>
 				<p>Портфолио — это подборка собственных работ, необходимых для демонстрации профессионального уровня кандидата. Это могут быть лучшие статьи, дизайн-макеты, картины, фотографии и прочие проекты.</p>
 			</div>
 		</div>
-		<div class="mainContainer" style="background: #ffe3e3;">
-			<div class="mainBlock" id="Main">
+		<div class="mainContainer" style="background: #ffe3e3;" id="Main">
+			<div class="mainBlock mainBlockRight">
 				<h1>Главная</h1>
 				<p>
 					<h3>-</h3>
 				</p>
 			</div>
 		</div>
-		<div class="mainContainer" style="background: #ffdede;">
-			<div class="mainBlock" id="yak2">
+		<div class="mainContainer" style="background: #ffdede;" id="About">
+			<div class="mainBlock mainBlockRight">
 				<h1>Обо мне</h1>
 				<p>
 				<h2>Курбанов Искандер Маратович</h2>
@@ -80,15 +83,14 @@
 				</h3>
 			</div>
 		</div>
-		<div class="mainContainer" style="background: #ffd9d9;">
-			<div class="mainBlock" id="yak3">
+		<div class="mainContainer" style="background: #ffd9d9;" id="Arc">
+			<div class="mainBlock mainBlockRight">
 				<h1>Архив</h1>
 				<h2>Проекты</h2>
 				<h3>-</h3>
 			</div>
 
 		</div>
-		
 	</main>
 <hr>
 	<footer>
@@ -100,13 +102,10 @@
 			</div>
 			<div class="footerCopyDiv">
 				2019 Курбанов Искандер.
-			</div>
-			
+			</div>		
 		</div>
-
 	</footer>
 	<div id="scrollToTop" onclick="goUp();">↑</div>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/topBt.js"></script>
 </body>
 </html>

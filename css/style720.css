@@ -1,0 +1,21 @@
+/* ---------ADAPTATION -------- */
+@media (max-width: 1125px) and (min-width : 480px) {
+
+main img{width:100%; margin: 10px auto;}
+
+main .galleryBox{
+	display: inline-block;
+	width: 100%;
+	background: #dbbaba;
+	margin: 10px;
+}
+
+.mainBlock{
+	width: 95%;
+	padding: 60px 0px 60px 0px;
+	margin: 0px auto;
+}
+
+
+
+}

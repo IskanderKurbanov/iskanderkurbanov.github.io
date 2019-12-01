@@ -4,12 +4,14 @@ body{ background:;font-family: 'Open Sans', sans-serif;}
 
 h1{font-size: 32px}
 h2{font-size: 26px;}
-h3{font-size: 24px;}
 h3{font-size: 20px;font-weight: 200;}
 
+.Fmenu, .mainBlock, .footerBox{
+	max-width: 1800px;
+	margin: 0 auto;
+}
 
-
-/* Header */
+/* -------------------Header--------------------- */
 
 header{
 	font-size:;
@@ -39,43 +41,72 @@ header li{
 header a{color: white;text-decoration:none;padding: 15px 20px;}
 header a:hover{color: black;background: white; transition: all 0.2s;}
 
-
-
 .logoDiv{
 	padding: 200px 0px 50px 0px;
 	color: white;
 	text-align: center;
 }
 
-/* Main */
+
+
+
+/* ----------------Main------------------- */
 
 main{
 	min-height: 400px;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+
+main a{color: black;font-weight: 100;}
 main h1{text-align: center;}
 main h2{padding: 10px 5px;}
 main h3{padding: 1px 10px;}
+main h4{}
+main h5{font-size: 20px;}
+main h6{font-size: 18px;font-weight: 100;}
 
 main ul{
 	padding: 10px 20px;
 }
 
-.mainContainer{
-	padding: 40px 0px;
+main li{
+	list-style-type: circle;
+}
+
+main .gallery{}
+
+@media (min-width : 1125px) {
+
+main img{/*max-width: 350px;*/width: 100%;}
+
+main .galleryBox{
+	display: inline-block;
+	/*max-width: 350px;*/
+	width: 30%;
+	background: #dbbaba;
+	margin: 10px 1.5%;
+	vertical-align: top;
 }
 
 .mainBlock{
 	width: 70%;
 	padding: 60px 0px 60px 0px;
 	margin: 0px auto;
-	
+}
+}
+
+.mainContainer{
+	padding: 40px 0px;
 }
 .mainBlockC{padding: 100px 0px 100px 0px;}
+/*
 .mainBlockRight p,.mainBlockRight h3,.mainBlockRight h2, {padding: 0px 100px 0px 0px;}
 .mainBlockRight{min-height: 500px;}
+*/
 
-/* Footer */
+
+
+/* ------------------------Footer-------------------------- */
 
 footer{
 	color: #2e2020;

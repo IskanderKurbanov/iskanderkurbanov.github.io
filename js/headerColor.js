@@ -9,7 +9,7 @@ setInterval(
 
 // Generates random color 
 function generateColor() {
-	let arr = ['#913f3f', '#5a81bf', '#3eab9c', '#a2ab3e', '#9567bf'];
+	let arr = ['#913f3f', '#5a81bf', '#3eab9c', '#a2ab3e', '#9567bf', '#bab525','#00b59d'];
 	var i = Math.floor(Math.random() * arr.length);
 	return arr[i];
 	

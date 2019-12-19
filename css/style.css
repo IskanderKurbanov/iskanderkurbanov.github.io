@@ -1,10 +1,18 @@
-*{padding: 0px; margin: 0px;font-size: 20px;}
+*{padding: 0px; margin: 0px;}
 
-body{ background:;font-family: 'Open Sans', sans-serif;}
+@media (min-width : 720px) {
 
-h1{font-size: 32px}
-h2{font-size: 26px;}
-h3{font-size: 20px;font-weight: 200;}
+body{background:;font-family: 'Open Sans', sans-serif;}
+
+h1{font-size: 60px}
+h2{font-size: 35px;}
+h3{font-size: 30px;}
+h4{font-size: 24px;}
+h5{font-size: 20px;}
+h6{font-size: 18px;}
+h3,h4,h5,h6{font-weight: 200;}
+h4{padding: 10px 15px;}
+a{font-size: 24px;}
 
 .Fmenu, .mainBlock, .footerBox{
 	max-width: 1800px;
@@ -14,19 +22,17 @@ h3{font-size: 20px;font-weight: 200;}
 /* -------------------Header--------------------- */
 
 header{
-	font-size:;
 	background:#913f3f;
 	transition: all 0.9s;
 }
 
 .Fmenu{
 	width: 100%;
-	/*position: fixed;*/
 	transition: all 0.9s;
 }
 
-header h1{font-size: 50px; padding: 0px;margin: 0px;text-transform: uppercase;}
-header h2{font-size: 30px; color: black;font-family: 'Source Sans Pro', sans-serif;text-transform: uppercase;}
+header h1{padding: 0px;margin: 0px;text-transform: uppercase;}
+header h2{color: black;font-family: 'Source Sans Pro', sans-serif;text-transform: uppercase;}
 
 header ul{
 	padding: 15px 0px;
@@ -42,7 +48,7 @@ header a{color: white;text-decoration:none;padding: 15px 20px;}
 header a:hover{color: black;background: white; transition: all 0.2s;}
 
 .logoDiv{
-	padding: 200px 0px 50px 0px;
+	padding: 200px 0px 150px 0px;
 	color: white;
 	text-align: center;
 }
@@ -56,15 +62,12 @@ main{
 	min-height: 400px;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+main .anon{
+	width: 200px;
+}
 
-main .arc a{color: black;font-weight: 100;}
-main a{color: black; text-decoration: none; }
-main h1{text-align: center;}
-main h2{padding: 10px 5px;}
-main h3{padding: 1px 10px;}
-main h4{}
-main h5{font-size: 20px; padding: 5px; border-bottom:1px solid black; }
-main h6{font-size: 18px;font-weight: 100; padding: 5px;}
+main .arc a{color: black;font-weight: 100;text-decoration: underline;}
+main a{color: black; text-decoration: none;}
 
 main ul{
 	padding: 10px 20px;
@@ -74,15 +77,22 @@ main li{
 	list-style-type: circle;
 }
 
+main .hL{
+	list-style-type: disc;
+}
+
 main .gallery{}
 
-@media (min-width : 1125px) {
+main .hiddenList{
+	display: none;
+	transition: all .5s;
+	padding: 5px;
+}
 
-main img{/*max-width: 350px;*/width: 100%;}
+main img{width: 100%;}
 
 main .galleryBox{
 	display: inline-block;
-	/*max-width: 350px;*/
 	width: 30%;
 	background: #dbbaba;
 	margin: 10px 1.5%;
@@ -94,10 +104,9 @@ main .galleryBox{
 main .galleryBox:hover{opacity: 1;}
 
 .mainBlock{
-	width: 70%;
+	width: 85%;
 	padding: 60px 0px 60px 0px;
 	margin: 0px auto;
-}
 }
 
 .mainContainer{
@@ -121,7 +130,6 @@ footer{
 footer a{
 	color: #2e2020;
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 14px;
 }
 
 footer li{
@@ -135,18 +143,12 @@ footer li{
 }
 
 .footerLinkDiv{
-	font-size: 14px;
 	padding: 20px;
 }
 
 .footerCopyDiv{
-	font-size: 14px;
 	padding: 20px;
 }
-
-
-
-
 
 
 #scrollToTop {
@@ -161,4 +163,6 @@ footer li{
 
 #scrollToTop:hover {
 	opacity: 1;
+}
+
 }

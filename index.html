@@ -10,9 +10,12 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/scroll.js"></script>
-	<script type="text/javascript" src="js/headerColor.js"></script>
 	<script type="text/javascript" src="js/topBt.js"></script>
-
+	<script type="text/javascript" src="js/jsFuncs.js"></script>
+	<!--
+	<script type="text/javascript" src="js/hiddenList.js"></script>
+	<script type="text/javascript" src="js/headerColor.js"></script>
+	-->
 	<link rel="shortcut icon" href="img/k.png" type="image/png">
 </head>
 <body>
@@ -31,8 +34,8 @@
 	<main>
 		<div class="mainContainer " style="text-align:center;">
 			<div class="mainBlock mainBlockC">
-				<h1>Проба пера!</h1>
-				<p>Портфолио — это подборка собственных работ, необходимых для демонстрации профессионального уровня кандидата. Это могут быть лучшие статьи, дизайн-макеты, картины, фотографии и прочие проекты.</p>
+				<h2>Проба пера!</h2>
+				<h3>Портфолио — это подборка собственных работ, необходимых для демонстрации профессионального уровня кандидата. Это могут быть лучшие статьи, дизайн-макеты, картины, фотографии и прочие проекты.</h3>
 			</div>
 		</div>
 		<div class="mainContainer" style="background: #ffe3e3;" id="Main">
@@ -100,53 +103,67 @@
 			<div class="mainBlock">
 				<h1>Обо мне</h1>
 				<p>
-				<h2>Курбанов Искандер Маратович</h2>
-				<h3>Надо бы сюда фото вставить(?)</h3>
+				<h3>Курбанов Искандер Маратович</h3>
+				<img src="img/anon.png" class="anon">
+				<h4>Надо бы сюда свое фото вставить(?)</h4>
 					<br>
-					<h3>Адрес: </h3>
-					<h3>Телефон: </h3>
-					<h3>E-mail: </h3>
-					<h3>Дата рождения: </h3>
-					<h3>Семейное положение: </h3>
+					<h4>Адрес: </h4>
+					<h4>Телефон: </h4>
+					<h4>E-mail: </h4>
+					<h4>Дата рождения: </h4>
+					<h4>Семейное положение: </h4>
 					<br>
-				<h2>Цель:</h2>
-					<h3>Получить должность программиста (разработчика информационных систем) с окладом не менее 30000р.</h3>
+				<h3>Цель:</h3>
+					<h4>Получить должность программиста (разработчика информационных систем) с окладом не менее 30000р.</h4>
 					<br>
-				<h2>Образование: </h2>
-					<h3>-</h3>
+				<h3>Образование: </h3>
+					<h4>-</h4>
 					<br>
-				<h2>Опыт работы</h2>
-					<h3>-</h3>
+				<h3>Опыт работы</h3>
+					<h4>-</h4>
 					<br>
-				<h2>Персональная информация</h2>
-					<h3>Готов к работе в команде и индивидуально. Коммуникабелен, стрессоустойчив. Выполняю работу в срок (способен четко оценить сроки выполнения задачи).</h3>
+				<h3>Персональная информация</h3>
+					<h4>Готов к работе в команде и индивидуально. Коммуникабелен, стрессоустойчив. Выполняю работу в срок (способен четко оценить сроки выполнения задачи).</h4>
 				</p>
-				<h2>Навыки</h2>
-				<h3>
+				<h3>Навыки</h3>
+				<h4>
 				<ul>
-					<li>Знание Java Core(?)</li>
-					<li>Знание Python(?)</li>
+					<li id="listStyle1" class="hL"><a href="#hidden1" onclick="view('hidden1', 'listStyle1'); return false">Базовые знания Java Core</a>
+						<div id="hidden1" class="hiddenList">
+							<h6>- Скрытый текст</h6>
+						</div>
+					</li>
+					<li id="listStyle2" class="hL"><a href="#hidden2" onclick="view('hidden2', 'listStyle2'); return false">Базовые знания Python</a>
+						<div id="hidden2" class="hiddenList">
+							<h6>- Скрытый текст</h6>
+						</div>
+					</li>
+					<li id="listStyle3" class="hL"><a href="#hidden3" onclick="view('hidden3', 'listStyle3'); return false">Владение программными продукрами</a>
+						<div id="hidden3" class="hiddenList">
+							<h6>- Tmux</h6>
+							<h6>- LaTex</h6>
+							<h6>- Vim</h6>
+							<h6>- Умение работать со средствами контроля версий (git)</h6>
+						</div>
+					</li>
 					<li>Знание принципов ООП</li>
-					<li>Навыки разработки на одном из объектно-ориентированных языков программирования</li>
 					<li>Знание основ SQL, умение писать простые запросы</li>
 					<li>Знание HTML, CSS</li>
 					<li>Горячее желание развиваться в роли разработчика Java, Python</li>
-					<li>Умение работать со средствами контроля версий (git)</li>
-					<li>Владение программными продукрами (?).</li>
 				</ul>
-				</h3>
+				</h4>
 			</div>
 		</div>
 		<div class="mainContainer" style="background: #e8c3c3;" id="Arc">
 			<div class="mainBlock">
 				<h1>Архив</h1>
-				<h2>Проекты</h2>
-				<h3>
+				<h3>Проекты</h3>
+				<h4>
 					<ul class="arc">
 						<li>Проект в фш для проекта подруги /какоетотамчисло/2018 - <a href="img/fp.jpg" target="_blank">link</a></li>
 						<li>Name DD/MM/YY - link</li>
 					</ul>
-				</h3>
+				</h4>
 			</div>
 
 		</div>

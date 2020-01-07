@@ -16,19 +16,21 @@ a{font-size: 24px;}
 
 .Fmenu, .mainBlock, .footerBox{
 	max-width: 1800px;
-	margin: 0 auto;
+	margin: 0px auto;
 }
 
 /* -------------------Header--------------------- */
 
 header{
 	background:#913f3f;
+	overflow:hidden;
 	transition: all 0.9s;
 }
 
 .Fmenu{
 	width: 100%;
 	transition: all 0.9s;
+	display: inline-flex;
 }
 
 header h1{padding: 0px;margin: 0px;text-transform: uppercase;}
@@ -36,6 +38,15 @@ header h2{color: black;font-family: 'Source Sans Pro', sans-serif;text-transform
 
 header ul{
 	padding: 15px 0px;
+}
+.Umenu{
+	font-size: 30px;
+	color: white;
+	padding: 10px 30px;
+	width: 100%;
+}
+.Smenu{
+	width: 100%;
 	text-align: right;
 }
 
@@ -46,11 +57,17 @@ header li{
 
 header a{color: white;text-decoration:none;padding: 15px 20px;}
 header a:hover{color: black;background: white; transition: all 0.2s;}
+.ND{border-radius: 50px;transition: all 0.2s;background: white;color:black;opacity: 0.7;}
+.ND:hover{transition: all 0.2s;background: white;opacity: 1;}
 
 .logoDiv{
 	padding: 200px 0px 150px 0px;
 	color: white;
 	text-align: center;
+}
+
+.NextDoor{
+	margin-top: 70px;
 }
 
 
@@ -88,6 +105,7 @@ main .hiddenList{
 	transition: all .5s;
 	padding: 5px;
 }
+main .hL{transition: all 0.5s;}
 
 main img{width: 100%;}
 
@@ -118,7 +136,9 @@ main .galleryBox:hover{opacity: 1;}
 .mainBlockRight{min-height: 500px;}
 */
 
-
+main .Profile{display: inline-flex;width: 100%;margin: 0px auto;}
+main .Profile-photo{background: #4d6385;padding: 20px;margin: 0 0 0 auto;}
+main .Profile-info{background: #fffafa;padding: 20px;margin: 0 auto 0 0;}
 
 /* ------------------------Footer-------------------------- */
 
@@ -150,19 +170,45 @@ footer li{
 	padding: 20px;
 }
 
-
-#scrollToTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      opacity: 0;
-      transition: all 0.5s ease-in;
+.FSmenu{background:White;
+	width: 100%;
+	display: inline-flex;
+	position: fixed;
+	top: 0px;
+	transition: all 0.5s ease-in;
+	z-index: 99;
 }
 
-#scrollToTop:hover {
-	opacity: 1;
+.USmenu{
+	font-size: 30px;
+	color: white;
+	padding: 10px 30px;
+	width: 100%;
+	color:black;
 }
+.SSmenu{
+	width: 100%;
+	text-align: right;
+	color: black;
+}
+.SSmenu a{color: black;}
+.SSmenu a:hover{color: white;background: black}
+#menuSlide{
+	
+}
+
+#arrowTop{height: 20px;
+	width: 20px;
+	color: #913f3f;
+	position: fixed;
+	bottom: 50px;
+	right: 20px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: all 0.5s ease-in;
+}
+
+#arrowTop::before{content: '▲';}
+
 
 }

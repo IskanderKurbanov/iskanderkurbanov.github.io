@@ -10,29 +10,62 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/scroll.js"></script>
-	<script type="text/javascript" src="js/topBt.js"></script>
+	
 	<script type="text/javascript" src="js/jsFuncs.js"></script>
 	<!--
 	<script type="text/javascript" src="js/hiddenList.js"></script>
 	<script type="text/javascript" src="js/headerColor.js"></script>
+	<script type="text/javascript" src="js/topBt.js"></script>
 	-->
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
+	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+	m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	ym(56815654, "init", {
+		clickmap:true,
+		trackLinks:true,
+		accurateTrackBounce:true
+	});
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/56815654" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
 	<link rel="shortcut icon" href="img/k.png" type="image/png">
 </head>
-<body>
+<body onload="HSize();" id="topPage">
 	<header>
 		<nav id="menu" class="Fmenu">
-			<ul>
+			<ul class="Umenu">
+				<li>Profile</li>
+			</ul>
+			<ul class="Smenu">
 				<li><a href="#Main">Главная</a></li><li><a href="#About">Обо мне</a></li><li><a href="#Arc">Архив</a></li>
 			</ul>
 		</nav>
 
+		<div id="menuSlide" hidden>
+			<nav id="Smenu" class="FSmenu">
+				<ul class="USmenu">
+					<li>Profile</li>
+				</ul>
+				<ul class="SSmenu">
+					<li><a href="#Main">Главная</a></li><li><a href="#About">Обо мне</a></li><li><a href="#Arc">Архив</a></li>
+				</ul>
+			</nav>
+		</div>
+
 		<div class="logoDiv" id="yak4">
 			<h1>Курбанов Искандер</h1>
 			<h2>Kurbanov Iskander</h2>
+			<div id="NextDoor" class="NextDoor"><a href="#BoiInNextDoor" class="ND">⇩</a></div>
 		</div>
+		
 	</header>
 	<main>
-		<div class="mainContainer " style="text-align:center;">
+		<div class="mainContainer" style="text-align:center;" id="BoiInNextDoor">
 			<div class="mainBlock mainBlockC">
 				<h2>Проба пера!</h2>
 				<h3>Портфолио — это подборка собственных работ, необходимых для демонстрации профессионального уровня кандидата. Это могут быть лучшие статьи, дизайн-макеты, картины, фотографии и прочие проекты.</h3>
@@ -103,27 +136,28 @@
 			<div class="mainBlock">
 				<h1>Обо мне</h1>
 				<p>
-				<h3>Курбанов Искандер Маратович</h3>
-				<img src="img/anon.png" class="anon">
-				<h4>Надо бы сюда свое фото вставить(?)</h4>
-					<br>
-					<h4>Адрес: </h4>
-					<h4>Телефон: </h4>
-					<h4>E-mail: </h4>
-					<h4>Дата рождения: </h4>
-					<h4>Семейное положение: </h4>
-					<br>
-				<h3>Цель:</h3>
-					<h4>Получить должность программиста (разработчика информационных систем) с окладом не менее 30000р.</h4>
-					<br>
-				<h3>Образование: </h3>
-					<h4>-</h4>
-					<br>
-				<h3>Опыт работы</h3>
-					<h4>-</h4>
-					<br>
-				<h3>Персональная информация</h3>
-					<h4>Готов к работе в команде и индивидуально. Коммуникабелен, стрессоустойчив. Выполняю работу в срок (способен четко оценить сроки выполнения задачи).</h4>
+				<div class="Profile">
+					<div class="Profile-photo">
+						<img src="img/anon.png" class="anon">
+						<h3>Курбанов Искандер Маратович</h3>
+						<h4>Надо бы сюда свое фото вставить(?)</h4>
+					</div>
+					<div class="Profile-info">
+							<h4>Адрес: </h4>
+							<h4>Телефон: </h4>
+							<h4>E-mail: </h4>
+							<h4>Дата рождения: </h4>
+							<h4>Семейное положение: </h4>
+					</div>
+				</div>
+					<h3>Цель:</h3>
+						<h4>Получить должность программиста (разработчика информационных систем) с окладом не менее 30000р.</h4>
+					<h3>Образование: </h3>
+						<h4>-</h4>
+					<h3>Опыт работы</h3>
+						<h4>-</h4>
+					<h3>Персональная информация</h3>
+						<h4>Готов к работе в команде и индивидуально. Коммуникабелен, стрессоустойчив. Выполняю работу в срок (способен четко оценить сроки выполнения задачи).</h4>
 				</p>
 				<h3>Навыки</h3>
 				<h4>
@@ -181,7 +215,8 @@
 			</div>		
 		</div>
 	</footer>
-	<div id="scrollToTop" onclick="goUp();">↑</div>
+	<div id="arrowTop" hidden></div>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jsFuncs.js"></script>
 </body>
 </html>

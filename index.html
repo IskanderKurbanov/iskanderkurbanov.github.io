@@ -2,21 +2,12 @@
 <html>
 <head>
 	<title>Kurbanov Iskander | Portfolio</title>
-	
 	<meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/style720.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Source+Sans+Pro:300&display=swap" rel="stylesheet">
-
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/scroll.js"></script>
-	
 	<script type="text/javascript" src="js/jsFuncs.js"></script>
-	<!--
-	<script type="text/javascript" src="js/hiddenList.js"></script>
-	<script type="text/javascript" src="js/headerColor.js"></script>
-	<script type="text/javascript" src="js/topBt.js"></script>
-	-->
 
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript" >
@@ -35,21 +26,22 @@
 
 	<link rel="shortcut icon" href="img/k.png" type="image/png">
 </head>
-<body onload="HSize();" id="topPage">
+<body id="topPage">
 	<header>
+
 		<nav id="menu" class="Fmenu">
 			<ul class="Umenu">
 				<li>Portfolio</li>
 			</ul>
 			<ul class="Smenu">
-				<li><a href="#Main">Главная</a></li><li><a href="#About">Обо мне</a></li><li><a href="#Arc">Архив</a></li>
+				<li><a href="#Main">Главная</a></li><li><a href="#About">Обо мне</a></li><li><a href="#Arc">Архив</a></li><li><a href="#Contact">Связь со мной</a></li>
 			</ul>
 		</nav>
 
 		<div id="menuSlide" hidden>
 			<nav id="Smenu" class="FSmenu">
 				<ul class="USmenu">
-					<li>Kurbanov Iskander</li>
+					<li><a href="#topPage">KURBANOV ISKANDER</a></li>
 				</ul>
 				<ul class="SSmenu">
 					<li><a href="#Main">Главная</a></li><li><a href="#About">Обо мне</a></li><li><a href="#Arc">Архив</a></li>
@@ -58,11 +50,11 @@
 		</div>
 
 		<div class="logoDiv" id="yak4">
-			<h1>Курбанов Искандер</h1>
-			<h2>Kurbanov Iskander</h2>
+			<h1>I'm Kurbanov Iskander.</h1>
+			<h2>Курбанов Искандер</h2>
 			<div id="NextDoor" class="NextDoor"><a href="#BoiInNextDoor" class="ND">⇩</a></div>
 		</div>
-		
+
 	</header>
 	<main>
 		<div class="mainContainer-c" style="text-align:center;" id="BoiInNextDoor">
@@ -72,63 +64,40 @@
 			</div>
 		</div>
 		<div class="mainContainer" id="Main">
-			<div class="mainBlock mainBlockRight">
+			<div class="mainBlock">
 				<h1>Главная</h1>
-				<p>
-					<h2>Проекты</h2>
-					<div class="gallery">
-					
-						<div class="galleryBox">
-							<a href="img/bg.jpg" target="_blank"><img src="img/bg.jpg"></a>
-							<a href="#">
-							<div>
-								<h5>Name</h5>
-								<h6>Description</h6>
-							</div>
-							</a>
-						</div>
+				<h2>Проекты</h2>
+				<div class="gallery">
 
-						<div class="galleryBox">
-							<a href="img/fp.jpg" target="_blank"><img src="img/fp.jpg">
-							<div>
-								<h5>Мой первый проект</h5>
-								<h6>Емае горжусь им</h6>
-							</div>
-							</a>
-						</div>
-
-						<div class="galleryBox">
-							<a href="img/bg.jpg" target="_blank"><img src="img/bg.jpg"></a>
-							<a href="#">
-							<div>
-								<h5>Name</h5>
-								<h6>Description</h6>
-							</div>
-							</a>
-						</div>
-					
-						<div class="galleryBox">
-							<a href="img/bg.jpg" target="_blank"><img src="img/bg.jpg"></a>
-							<a href="#">
-							<div>
-								<h5>Name</h5>
-								<h6>Description</h6>
-							</div>
-							</a>
-						</div>
-
-						<div class="galleryBox">
-							<a href="img/bg.jpg" target="_blank"><img src="img/bg.jpg"></a>
-							<a href="#">
-							<div>
-								<h5>Name</h5>
-								<h6>Description</h6>
-							</div>
-							</a>
-						</div>
+					<div class="galleryBox"><img src="img/bg.jpg"><img src="img/tm.png" class="Phantom"><img src="img/pt.png" class="Phantom">
+							<h5>Telegram-bot Esmiraldabot(заморожен)</h5>
+							<h6>В данном проекте использовался язык Python в связке с библиотекой TelegramBotApi(в дальнейшем переход будет в сторону webhook технологии)
+								<a href="https://github.com/IskanderKurbanov/simpleTelegramBot---Esmiraldabot">Ссылка</a> </h6>
 					</div>
-					<h3>-</h3>
-				</p>
+
+					<div class="galleryBox"><img src="img/bg.jpg"><img src="img/pt.png" class="Phantom"><img src="img/fl.jpeg" class="Phantom"><img src="img/hr.png" class="Phantom">
+							<h5>web-приложение</h5>
+							<h6>В проекте данном проекте использовался язык Python в связке с библиотекой Flask и размешенном на heroku
+								<a href="https://knd-logs.herokuapp.com/">Ссылка</a> </h6>
+					</div>
+
+					<div class="galleryBox"><img src="img/portfolio.png"><img src="img/html.png" class="Phantom"><img src="img/css.png" class="Phantom"><img src="img/js.png" class="Phantom">
+							<h5>Web-портфолио</h5>
+							<h6>Сам сайт портфолио представляет из себя написаную с нуля страницу из HTML, CSS, JS</h6>
+					</div>
+
+					<!--<div class="galleryBox"><img src="img/fp.jpg">
+							<h5>Мой первый проект</h5>
+							<h6>Емае горжусь им</h6>
+					</div>-->
+
+				<h2>Будущие проекты в стадии анализа</h2>
+					<div class="galleryBox"><img src="img/bg.jpg"><img src="img/jv.png" class="Phantom"><img src="img/sp.png" class="Phantom">
+							<h5>web-приложение</h5>
+							<h6>В проекте данном проекте использовался язык java в связке с framework'ом Spring( пока в стадии проектирования )</h6>
+					</div>
+
+				</div>
 			</div>
 		</div>
 
@@ -138,31 +107,37 @@
 				<p>
 				<div class="Profile">
 					<div class="Profile-photo">
-						<img src="img/anon.png" class="anon">
+						<center><img src="img/anon2.png" class="anon"></center>
 						<h3>Курбанов Искандер Маратович</h3>
 						<h4>Надо бы сюда свое фото вставить(?)</h4>
 					</div>
 					<div class="Profile-info">
-							<h4>Адрес: </h4>
-								<p>А тебе скажи</p>
+							<!--<h4>Адрес: </h4>
+								<p>-</p>
 							<h4>Телефон: </h4>
-								<p>А тебе скажи</p>
-							<h4>E-mail: </h4>
-								<p>А тебе скажи</p>
+								<p>-</p>
 							<h4>Дата рождения: </h4>
-								<p>А тебе скажи</p>
+								<p>-</p>
 							<h4>Семейное положение: </h4>
-								<p>А тебе скажи</p>
+								<p>-</p>-->
+							<h4>E-mail: </h4>
+								<p>iskanderkurbanov0@gmail.com(редко)</p>
+
+
 					</div>
 				</div>
 					<h3>Цель:</h3>
 						<h4>Получить должность программиста (разработчика информационных систем) с окладом не менее 30000р.</h4>
+						<br>
 					<h3>Образование: </h3>
-						<h4>-</h4>
+						<h4>2016 - по настоящее время. СПО - Бугульминский Машиностроительный Техникум.</h4>
+						<br>
 					<h3>Опыт работы</h3>
-						<h4>-</h4>
+						<h4>03.02.2020 - по настоящее время. Специалист информационного отдела Бугульминского МР(подряд).</h4>
+						<br>
 					<h3>Персональная информация</h3>
-						<h4>Готов к работе в команде и индивидуально. Коммуникабелен, стрессоустойчив. Выполняю работу в срок (способен четко оценить сроки выполнения задачи).</h4>
+						<h4>Готов к работе в команде и индивидуально. Коммуникабелен, стрессоустойчив. ~Выполняю работу в срок (способен четко оценить сроки выполнения задачи).</h4>
+						<br>
 				</p>
 				<h3>Навыки</h3>
 				<h4>
@@ -174,10 +149,10 @@
 					</li>
 					<li id="listStyle2" class="hL"><a href="#hidden2" onclick="view('hidden2', 'listStyle2'); return false">Базовые знания Python</a>
 						<div id="hidden2" class="hiddenList">
-							<h6>- Скрытый текст</h6>
+							<h6>- Базовые знания flask</h6>
 						</div>
 					</li>
-					<li id="listStyle3" class="hL"><a href="#hidden3" onclick="view('hidden3', 'listStyle3'); return false">Владение программными продукрами</a>
+					<li id="listStyle3" class="hL"><a href="#hidden3" onclick="view('hidden3', 'listStyle3'); return false">Владение программными продуктами</a>
 						<div id="hidden3" class="hiddenList">
 							<h6>- Tmux</h6>
 							<h6>- LaTex</h6>
@@ -195,16 +170,23 @@
 		</div>
 		<div class="mainContainer" id="Arc">
 			<div class="mainBlock">
-				<h1>Архив</h1>
-				<h3>Проекты</h3>
+				<h1>Архив проектов</h1>
 				<h4>
 					<ul class="arc">
+						<li>Telegram-bot Esmiraldabot(заморожен) 09/01/2019 - <a href="https://github.com/IskanderKurbanov/simpleTelegramBot---Esmiraldabot">link</a></li>
+						<li>web-приложение 08/01/2019 - <a href="https://github.com/IskanderKurbanov/simpleTelegramBot---Esmiraldabot">link</a></li>
 						<li>Проект в фш для проекта подруги /какоетотамчисло/2018 - <a href="img/fp.jpg" target="_blank">link</a></li>
-						<li>Name DD/MM/YY - link</li>
 					</ul>
 				</h4>
 			</div>
-
+		</div>
+		<div class="mainContainer" id="Contact">
+			<div class="mainBlock">
+				<h1>Связь со мной</h1>
+				<h4>
+					not working now.
+				</h4>
+			</div>
 		</div>
 	</main>
 <hr>
@@ -213,11 +195,18 @@
 			<div class="footerLinkDiv">
 				<ul>
 					<li><a href="https://github.com/IskanderKurbanov/">Github</a></li>
+					<li><a href="https://www.linkedin.com/in/kurbanov-iskander-350bb819b/">LinkedIn</a></li>
+					<li><a href="https://twitter.com/Tobias53610517">Twitter</a></li>
+
 				</ul>
 			</div>
 			<div class="footerCopyDiv">
-				2019 Курбанов Искандер.
-			</div>		
+				2019-2020 Курбанов Искандер.
+			</div>
+			<div class="footerCopyDiv">
+				Thank you for visiting my site!
+			</div>
+
 		</div>
 	</footer>
 	<div id="arrowTop" hidden></div>

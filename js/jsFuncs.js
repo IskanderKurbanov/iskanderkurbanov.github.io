@@ -1,14 +1,12 @@
-window.onload = HSize;
 
+/*
 setInterval(
 	function() {
-  $color = generateColor();
+  $color = hexGeneator();
   $color1 = generateColor1();
   $('header').css('background-color', $color);
   $('#arrowTop').css('color', $color);
   $('.SSmenu a').css('color', $color);
-  $('main .galleryBox').css('background', $color1);
-  /*$('main .Profile-info').css('background', $color1);*/
 }, 3000);
 
 function generateColor() {
@@ -17,14 +15,12 @@ function generateColor() {
 	return arr[i];
 }
 
-function generateColor1() {
-  let arr = ['edcaca','ceddf5','ace3db','e4e8b7','cab4de','e0dfb1','a3c7c2'];
-  var i = Math.floor(Math.random() * arr.length);
-  return '#' + arr[i];
-}
-
 function HSize() {
   $('header').css('height', document.documentElement.clientHeight)
+}*/
+
+function hexGeneator(){
+  return '#'+Math.floor(Math.random()*16777215).toString(16);
 }
 
 function view(n, v) {

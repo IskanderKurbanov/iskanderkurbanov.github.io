@@ -1,61 +1,66 @@
 *{padding: 0px; margin: 0px;}
 
-@media (min-width : 720px) {
 
-body{background:;font-family: 'Open Sans', sans-serif;}
+header{
+	background: linear-gradient(-45deg,#ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 2000%;
+	animation: gradient 25s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 25%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+body{font-family: 'Open Sans', sans-serif;}
+header h2, main, footer{font-family: 'Source Sans Pro', sans-serif;}
+
 
 h1{font-size: 60px}
 h2{font-size: 35px;}
 h3{font-size: 30px;}
 h4{font-size: 24px;}
-h5{font-size: 20px;}
-h6{font-size: 18px;}
+h5{font-size: 28px;}
+h6{font-size: 14px;}
 h3,h4,h5,h6{font-weight: 200;}
 h4{padding: 10px 15px;}
 a{font-size: 24px;}
 
-.Fmenu, .mainBlock, .footerBox{
-	max-width: 1800px;
-	margin: 0px auto;
-}
+.Fmenu, .mainBlock, .footerBox{max-width: 1800px;margin: 0px auto;}
 
-/* -------------------Header--------------------- */
+/* HEAD */
 
 header{
-	background:#913f3f;
-	overflow:hidden;
+	/*background:#913f3f;*/
 	transition: all 0.9s;
 }
-
 .Fmenu{
 	min-width: 100%;
 	transition: all 0.9s;
 	display: inline-flex;
 	margin: 0px auto;
 }
+header h3, header h2, header h1{text-transform: uppercase;}
+header h2{color: black;}
+header ul{padding: 15px 0px;}
 
-header h1{padding: 0px;margin: 0px;text-transform: uppercase;}
-header h2{color: black;font-family: 'Source Sans Pro', sans-serif;text-transform: uppercase;}
 
-header ul{
-	padding: 15px 0px;
-}
-.Umenu{
-	font-size: 30px;
-	color: white;
-	padding: 10px 30px;
-	width: 100%;
-}
-.Smenu{
-	width: 100%;
-	text-align: right;
-}
+.Umenu{font-size: 30px;color: white;padding: 10px 30px;width: 100%;}
+.Smenu{width: 100%;text-align: right;}
+
 
 header li{
 	list-style:none;
 	display: inline;
 }
-
 header a{color: white;text-decoration:none;padding: 15px 20px;}
 header a:hover{color: black;background: white; transition: all 0.2s;}
 .ND{border-radius: 50px;transition: all 0.2s;background: white;color:black;opacity: 0.7;}
@@ -74,14 +79,14 @@ header a:hover{color: black;background: white; transition: all 0.2s;}
 
 
 
-/* ----------------Main------------------- */
+/* MAIN */
 
 main{
 	min-height: 400px;
-	font-family: 'Source Sans Pro', sans-serif;
 }
 main .anon{
-	width: 200px;
+	width: 100%;
+	max-width: 250px;
 }
 
 main a{color: black; text-decoration: none;}
@@ -110,15 +115,15 @@ main img{width: 100%;}
 
 main .galleryBox{
 	display: inline-block;
-	width: 30%;
-	background: #dbbaba;
-	margin: 10px 1.5%;
+	background: #fff;
+	width: 29%;
+	margin: 9px .5%;
+	padding:6px;
 	vertical-align: top;
-	border-radius: 4px;
-	opacity: .8;
 	transition: all .5s;
 }
-main .galleryBox:hover{opacity: 1;}
+main .galleryBox:hover{}
+main .Phantom{max-width: 50px; max-height: 50px; position: relative;top:-60px; margin-bottom: -40px;}
 
 .mainBlock{
 	width: 85%;
@@ -126,14 +131,10 @@ main .galleryBox:hover{opacity: 1;}
 	margin: 0px auto;
 }
 
-.mainContainer-c,.mainContainer{
-	padding: 40px 0px;
-}
-
 .mainContainer{
-	background: /*#f5d7d7*/#d7e1f5;
+	background: #d7e1f5;
 }
-.mainBlockC{padding: 100px 0px 100px 0px;}
+.mainBlockC{padding: 100px 0px;}
 /*
 .mainBlockRight p,.mainBlockRight h3,.mainBlockRight h2, {padding: 0px 100px 0px 0px;}
 .mainBlockRight{min-height: 500px;}
@@ -162,16 +163,10 @@ footer a:hover, main a:hover{
 }
 
 
-/* ------------------------Footer-------------------------- */
+/* FOOTER */
 
 footer{
 	color: #2e2020;
-	font-family: 'Source Sans Pro', sans-serif;
-}
-
-footer a{
-	color: #2e2020;
-	font-family: 'Source Sans Pro', sans-serif;
 }
 
 footer li{
@@ -192,7 +187,7 @@ footer li{
 	padding: 20px;
 }
 
-.FSmenu{background:white;
+.FSmenu{background: #fff;
 	width: 100%;
 	display: inline-flex;
 	position: fixed;
@@ -201,7 +196,7 @@ footer li{
 	z-index: 99;
 	margin: 0px auto;
 }
-.USmenu, .SSmenu, .SSmenu a{color:black;}
+.USmenu a, .SSmenu, .SSmenu a{color:black;}
 .USmenu{
 	font-size: 24px;
 	padding: 15px;
@@ -226,6 +221,4 @@ footer li{
 }
 
 #arrowTop::before{content: '▲';}
-
-
 }

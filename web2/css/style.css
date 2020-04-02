@@ -1,11 +1,12 @@
-*{padding: 0;margin: 0;}
+*{padding: 0;margin: 0; scroll-behavior: smooth;}
 
 :root{
   font-size: 16px;
   font-family: ;
 }
 
-
+a{color: #000;}
+ul{list-style: none;}
 
 body{}
 body::-webkit-scrollbar{width:;}
@@ -24,36 +25,46 @@ header a:hover{filter: grayscale(0%) opacity(1);background: #1b1a1a;}
 header .logo{
   font-weight: bold;
   margin-bottom: 1rem;
-  text-align: center;
   background: #1b1a1a;
 }
 header span{
   display: none;
   margin-left: 1rem;
 }
-header nav:hover span{display: block;text-align: center;}
+header nav:hover span{display: block;}
 header nav{
   width: 5rem;
   height: 100vh;
   position: fixed;
-  background: #000;
-  transition: width .3s ease;
 }
-header nav:hover{width: 16rem;}
+header nav:hover{width: 16rem;background: #000;}
 header ul{
-  list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   height: 100%;
 }
 header li{width: 100%;}
 /*header li:last-child{margin-top: auto;}*/
-header i{width: 70px;}
-
+header i{width: 70px;color:#000;}
+header:hover i{width: 70px;color:#fff;}
+header i, header nav, header nav:hover span{transition: .3s ease;}
+header ul, header.logo{text-align: center;}
 
 main{
   margin-left: 5rem;
-  padding: 1rem;
+}
+main .item{color:#23d5ab;}
+main .paragraph{padding-bottom: 50px;min-height: 200px;}
+main div{padding: 0px 10px;}
+main .PreView{
+  background: linear-gradient(-45deg,#f54242, #23a6d5, #23d5ab);
+  background-size: 400% 200%;
+  animation: gradient 25s ease infinite;
+  text-align: center;
+  padding: 100px 0px;
+}
+@keyframes gradient {
+	0% {background-position: 0% 25%;}
+	50% {background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
 }

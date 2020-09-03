@@ -1,104 +1,95 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Source+Sans+Pro:300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
-    <title>IskanderKurbanov</title>
-  </head>
-  <body>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Iskander Kurbanov</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="work" class="main">
+		<nav>
+			<h1><a href="#" @click="switchView('ik')">IK.</a></h1>
+			<ul>
+				<li><a href="#" @click="switchView('about')">about</a></li>
+				<li><a href="#" @click="switchView('work')">works</a></li>
+				<li><a href="#" @click="switchView('another')">links</a></li>
+			</ul>
+		</nav>
 
-    <header>
-      <nav>
-        <ul>
+		
+		
+		<component :is="currentObj" transition="switch">
+		</component>
+		<move-k></move-k>
+	</div>
 
-          <li>
-            <a href="#FerstP">
-              <i class="far fa-user-circle fa-w-14 fa-3x"></i>
-              <span>
-                IskanderKurbanov.
-              </span>
-            </a>
-          </li>
+	<template id="w-ik">
+		<main>
+			<div class="ik">
+				<h1>I'm Kurbanov Iskander.</h1>
+				<h2>Курбанов Искандер</h2>
 
-          <li>
-            <a href="#SecondP">
-              <i class="fas fa-project-diagram fa-w-14 fa-2x"></i>
-              <span>
-                AboutMe.
-              </span>
-            </a>
-          </li>
+				<h2>Web | 3D | Design</h2>
+			</div>
+		</main>
+	</template>
 
-          <li>
-            <a href="#ThirdP">
-              <i class="far fa-address-card fa-w-14 fa-3x"></i>
-              <span>
-                Education.
-              </span>
-            </a>
-          </li>
+	<template id="w-about">
+		<main>
+			
 
-          <li>
-            <a href="#FourP">
-              <i class="fas fa-link fa-w-14 fa-3x"></i>
-              <span>
-                Work.
-              </span>
-            </a>
-          </li>
+			<div class="">
 
-          <li>
-            <a href="#FifthP">
-              <i class="fas fa-info fa-w-14 fa-3x"></i>
-              <span>
-                Information.
-              </span>
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-    </header>
-
-
-    <main>
-
-      <div class="PreView" id="FerstP">
-  			<h1>I'm Kurbanov Iskander.</h1>
-  			<h2>Курбанов Искандер</h2>
-  			<a href="#SecondP">⇩</a>
-  		</div>
-
-      <div class="paragraph">
-  				<h2>Проба пера!</h2>
-  				<h3>Портфолио — это подборка собственных работ, необходимых для демонстрации профессионального уровня кандидата.
-             Это могут быть лучшие статьи, дизайн-макеты, картины, фотографии и прочие проекты.</h3>
-  		</div>
-
-      <div class="paragraph" id="SecondP">
-        <h2 class="item">Имя и контактная информация</h2>
-        <h3>Kurbanov Iskander</h3>
-        <h4>Курбанов Искандер.</h4>
-        <h4>E-mail: iskanderkurbanov0@gmail.com(редко)</h4>
-      </div>
-
-      <div class="paragraph" id="ThirdP">
-        <h2 class="item">Образование</h2>
-      </div>
-
-      <div class="paragraph" id="FourP">
-        <h2 class="item">Опыт работы</h2>
-      </div>
-
-      <div class="paragraph" id="FifthP">
-        <h2 class="item">Дополнительная информация</h2>
-      </div>
+				
+				<h3>Навыки</h3>
+				<ul>
+					<li>Базовые знания Python
+						<h6>- Базовые знания flask</h6>
+					</li>
+					<li>Владение программными продуктами
+						<h6>- Tmux</h6>
+						<h6>- LaTex</h6>
+						<h6>- Vim</h6>
+						<h6>- Умение работать со средствами контроля версий (git)</h6>
+						<h6>- Adobe Illustrator</h6>
+						<h6>- SketchUp</h6>
+						<h6>- Autodesk Inventor</h6>
+					</li>
+					<li>Знание принципов ООП</li>
+					<li>Знание основ SQL, умение писать простые запросы</li>
+					<li>Знание HTML, CSS</li>
+					<li>Горячее желание развиваться в роли разработчика Python</li>
+				</ul>
 
 
 
-    </main>
+			</div>
+		</main>
+	</template>
 
-  </body>
+	<template id="w-work">
+		<main>
+			
+		</main>
+	</template>
+
+	<template id="w-another">
+		<main>
+			<div class="another">
+				<ul>
+					<li><a href="https://github.com/IskanderKurbanov/">Github</a></li>
+					<li><a href="https://www.linkedin.com/in/kurbanov-iskander-350bb819b/">LinkedIn</a></li>
+					<li><a href="https://twitter.com/Tobias53610517">Twitter</a></li>
+				</ul>
+				2019-2020 Курбанов Искандер.
+			
+				<p>Thank you for visiting my site!</p>
+			</div>
+		</main>
+	</template>
+
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
 </html>

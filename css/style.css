@@ -53,7 +53,7 @@ header h2{color: black;}
 header ul{padding: 15px 0px;}
 
 
-.Umenu{font-size: 30px;color: white;padding: 10px 30px;width: 100%;}
+.Umenu,.logo-Portfolio{font-size: 30px;color: white;padding: 0px 30px;width: 100%;text-align: left;}
 .Smenu{width: 100%;text-align: right;}
 
 
@@ -61,6 +61,7 @@ header li{
 	list-style:none;
 	display: inline;
 }
+header li:first-child{text-align: left;}
 header a{color: white;text-decoration:none;padding: 15px 20px;}
 header a:hover{color: black;background: white; transition: all 0.2s;}
 .ND{border-radius: 50px;transition: all 0.2s;background: white;color:black;opacity: 0.7;}
@@ -75,7 +76,7 @@ header a:hover{color: black;background: white; transition: all 0.2s;}
 .NextDoor{
 	margin-top: 70px;
 }
-
+.cv{background: #ffc400;}
 
 
 

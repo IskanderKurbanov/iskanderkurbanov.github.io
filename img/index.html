@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Vue Calc</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+	<style>
+	*{margin:0px;padding:0px;font-size:24px;}
+	body{background:#04c77f;}
+	article{background:#fff;border-radius:4px;padding:20px;margin:50px auto;width:50%;min-width:400px;text-align:center;}
+	h2{width:100%;margin: 0 0 25px; text-transform: uppercase;}
+	input{width:100px;text-align:center;}
+	button{width:100%;background:#d5f7e8;border:none;border-radius:4px;margin-top:20px;}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<article>
+		<h2>{{ current }}</h2>
+		{{ a }} + <input v-model="answer"> = {{ c }}
+		<button @click="generate_int()">Next</button>
+		</article>
+	</div>
+
+<script>
+
+new Vue({
+	el: "#app",
+	data: {
+		a: '',
+		b: '',
+		
+		answer: '',
+	},
+	computed:{
+		current: function(){
+			if(this.answer == this.b){
+				return "current"
+				this.$forceUpdate();
+			}
+			else{
+				return "incurrent"
+			}
+		},
+		c: function(){return this.a + this.b},
+	},
+	methods:{
+		generate_int: function () {		
+     			this.a = Math.floor(Math.random() * (100 - 1)) + 1;
+			this.b = Math.floor(Math.random() * (100 - 1)) + 1;
+			this.answer = ''
+		}  
+	}
+})
+
+</script>
+</body>
+</html>

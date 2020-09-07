@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+
+*{
+	margin:0px;
+	padding:0px;
+	color:;
+}
+
+:root{
+	--grand-color:#000;
+	--add-color:;
+
+	--text-color:#fff;
+	--add-text-color:;
+
+	--main-text: 'Oswald', sans-serif;
+	--add-text: 'Noto Sans', sans-serif;;
+}
+
+
+@media (max-width: 2000px) and (min-width: 720px){
+
+	main{
+		width: 80%; 
+		margin: 0px auto;
+	}
+
+	.desc, .name, .link, .foot{
+		margin: 5% 0px;
+	}
+	main .desc{
+		font-size: 46px;
+	}
+	main .name {
+		font-size: 86px;
+	}
+	main .link {
+		font-size: 32px;
+	}
+	main .foot {
+		font-size: 52px;
+	}
+	aside {
+		width: 7%;
+		padding: 5px 0px;
+	}
+	article {
+		width: 87%;
+		margin-right: 2%;
+		margin-left: 1%;
+	}
+	.about {
+		width: 100%;
+		display: inline-flex;
+	}
+
+} 
+
+@media (max-width: 720px){
+
+	main{
+		width: 95%; 
+		margin: 0px auto;
+	}
+
+	.desc, .name, .link, .foot{
+		margin: 5% 0px;
+	}
+	main .desc{
+		font-size: 46px;
+	}
+	main .name {
+		font-size: 86px;
+	}
+	main .link {
+		font-size: 32px;
+	}
+	main .foot {
+		font-size: 52px;
+	}
+	aside {
+		width: 7%;
+		padding: 5px 0px;
+	}
+	article {
+		width: 87%;
+		margin-right: 2%;
+		margin-left: 1%;
+	}
+	.about {
+		width: 100%;
+		display: flex;
+	}
+}
+
+body {
+	background: var(--grand-color);
+	color: var(--text-color);
+}
+main {}
+.desc, .name, .foot {
+	font-family: var(--main-text);
+}
+.about {
+	font-family: var(--add-text); 
+}
+.text{}
+
+aside {
+	color:#000;
+	background: #fff;
+	list-style: none;
+	writing-mode: vertical-lr;
+	vertical-align: middle;
+}
+li {
+	list-style: none;
+	padding: 4px 0px;
+	line-height: 1;
+}
+
+
+a{
+	background:linear-gradient(to bottom, #fff 0%, #fff 100%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 1px 1px;
+	color: #fff;
+	text-decoration: none;
+	transition: background-size .2s;
+}
+a:hover{
+	background-size: 4px 50px;
+	color: #000;
+}

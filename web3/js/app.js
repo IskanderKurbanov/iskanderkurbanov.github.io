@@ -1,7 +1,7 @@
 new Vue({
 	el: '#work',
 	data: {
-		message: 'Hello world',
+		message: 'Hello world', 
 		links: [
 			{
 				name: 'Github',
@@ -15,20 +15,41 @@ new Vue({
 				name: 'Twitter',
 				lk: 'https://twitter.com/Tobias53610517',
 			},
-		]
+		],
+		about: {
+			'web': [
+				'Python',
+				'Vue.js',
+				'HTML, CSS',
+				'SQL',
+			],
+			'3D': [
+				'Autodesk Inventor',
+				'SketchUp',
+			],
+			'Design': [
+				'Adobe Illustrator',
+			],
+		}
 	},
 	components: {
 		name:{
-			template: '<h1>Im Iskander Kurbanov.</h1>'
+			template: '<h2>Iskander Kurbanov.</h2>'
 		},
 		description: {
-			template: '<h2>Web-developer | freelancer</h2>'
+			template: '<h1>Web-developer | freelancer</h1>'
+		},
+		portfolio : {
+			template: '<h1>Feature projects. Cooming Soon. Sorry not now. </h1>'
+		},
+		about: {
+			template: ''
 		},
 		linkwork: {
 			template: ''
 		},
 		foot: {
-			template: '<h5>2019-2020 Курбанов Искандер.<br> Thank you for visiting my site!</h5>'
+			template: `<h5>2019-2020 Курбанов Искандер.<br>Thank you for visiting my site!</h5>`
 		}
 	}
 })

@@ -9,9 +9,11 @@
 </head>
 <body>
 	<main id="work">
-
-		<description class="desc text"></description>
 		<name class="name text"></name>
+		<description class="desc text"></description>
+		
+
+		<portfolio class="portf"></portfolio>
 
 		<div class="about">
 			<aside>
@@ -43,17 +45,6 @@
 				</ul>
 			</article>
 		</div>
-		<div class="about">
-			<aside>
-				Another
-			</aside>
-			<article>
-				<ul>
-					<li>Git</li>
-					<li>LaTex</li>
-				</ul>
-			</article>
-		</div>
 
 		<ul class="link">
 			<li v-for="link in links"> <a :href=" link.lk "> {{ link.name }} </a></li>
@@ -62,6 +53,13 @@
 		<!--<linkwork class="link"></linkwork>-->
 
 		<foot class="foot text"></foot>
+
+		<form>
+			<button>&#9994</button>
+			<button>&#9995</button>
+			<button>&#9996</button>
+		</form>
+
 	</main>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>

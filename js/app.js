@@ -1,4 +1,24 @@
 
+
+const cells = document.querySelectorAll(".cell")
+
+cells.forEach( function(item) {
+	item.addEventListener("click", function(){
+		let user = [];
+		let userStep = item;
+		let userStepTik = userStep.getAttribute("data-tab");
+
+		user.push(userStepTik)
+
+		for (let key in user) {
+			console.log( user[key] );
+		}
+
+		console.log(user)
+		userStep.classList.add('ustep');
+	})
+})
+
 /*
 window.addEventListener('scroll', function(){
 	let position = window.scrollY;

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+
 *{
 	margin:0px;
 	padding:0px;
@@ -15,8 +17,8 @@
 	--text-color:#fff;
 	--add-text-color:;
 
-	--main-text: 'Oswald', sans-serif;
-	--add-text: 'Noto Sans', sans-serif;;
+	--main-text: 'Nunito Sans', sans-serif; /*'Oswald', sans-serif;*/
+	--add-text: 'Noto Sans', sans-serif;
 }
 
 body {
@@ -91,15 +93,22 @@ a:hover {
 .red__clr { background: #db4444; }
 .green__clr { background: #7bdb56; }
 .blue__clr { background: #65c5eb; }
+.qr-code {}
+
+.tic-tak {width: 100px; background: #000;margin: 10px auto; display: none; }
+.cell { width: 30px; height: 30px; border: 1px solid #000; } .ustep { background: #49d160; }
 
 @media (max-width: 2000px) and (min-width: 720px){
 
+	body {background: #fff;}
 	main{
-		width: 80%; 
-		margin: 0px auto;
+		background: #000;
+		width: 85%; 
+		margin: 2% auto;
+		padding: 50px;
 	}
 
-	.desc, .name, .link, .foot, .portf{margin: 5% 0px;}
+	.desc, .name, .link, .foot, .portf{margin-bottom: 5%;}
 	.desc{font-size: 46px;}
 	.name {font-size: 86px;}
 	.link {font-size: 32px;}
@@ -119,7 +128,7 @@ a:hover {
 		width: 100%;
 		display: inline-flex;
 	}
-	.desc span{padding:0px 16px;border:solid 1px #fff;border-radius: 50px;}
+	.desc span {padding: 0px 36px; border:solid 1px #fff;border-radius: 50px;margin: 10px;}
 
 } 
 

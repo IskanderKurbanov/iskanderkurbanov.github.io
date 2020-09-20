@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Film list</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+	<style>
+		*{padding: 0px; margin: 0px; white-space:nowrap; text-overflow:ellipsis;}
+		
+	</style>
+</head>
+<body>
+
+	<div id="app" class="inln">
+		<ul>
+			<li v-for="data in datas">{{ data }}</li>
+		</ul>
+	</div>
+
+	<script>
+	new Vue({
+		el: '#app',
+		data() {
+			return {
+				datas: null,
+			};
+		},
+		mounted() {
+			axios.get('https://knd-logs.herokuapp.com/films').then(response => (this.datas = response['data']));
+	}});
+	</script>
+</body>
+</html>

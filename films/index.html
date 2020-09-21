@@ -19,6 +19,7 @@
 		.gen, .yer { display: inline-flex; width: 15%; padding: 6px 0px; }
 		.num { display: inline-flex; width: 5%; padding: 6px 0px; }
 		.nam { display: inline-flex; width: 60%; padding: 6px 0px; }
+		button { width: 2%; background: #000; height: 15px;border: none; text-decoration:none; }
 	</style>
 </head>
 <body>
@@ -31,17 +32,18 @@
 				<div class="nam">{{ datas['name'][item-1] }}</div>
 				<div class="yer">{{ datas['year'][item-1] }}</div>
 				<div class="gen">{{ datas['gen'][item-1] }}</div>
-				<button class="btn" @click="wtcFilm(item)">)</button>
+				<button class="btn" @click="wtcFilm(item)"></button>
 			</span>
 			<span v-if="datas['wtc'][item-1] == 'TRUE'" class="done">
 				<div class="num">{{ item }}</div>
 				<div class="nam">{{ datas['name'][item-1] }}</div>
 				<div class="yer">{{ datas['year'][item-1] }}</div>
 				<div class="gen">{{ datas['gen'][item-1] }}</div>
-				<button class="btn" @click="wtcFilm(item)">)</button>
+				<button class="btn" @click="wtcFilm(item)"></button>
 			</span>
 		</li>
 	</div>
+
 
 	<center>
 		<h2>IK qr code</h2>
@@ -59,11 +61,11 @@
 		mounted() {
 			axios.get('https://knd-logs.herokuapp.com/films')
 				.then(response => (this.datas = response['data']))
-				.catch(error => console.log(error));;
+				.catch(error => console.log(error));
 		},
 		methods: {
 			wtcFilm(item) {
-				axios.post('http://localhost:5000/films', { 'id' : item, })
+				axios.post('https://knd-logs.herokuapp.com/films', { 'id' : item, })
 				.then((response) => { console.log(response) })
 				.catch((error) => { console.log(error) });
 				

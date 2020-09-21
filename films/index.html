@@ -7,13 +7,15 @@
 	<style>
 		* {padding: 0px; margin: 0px;}
 		li {list-style: none;}
-		body{ background: #54b2ff; }
-		div {  text-align: center;}
+		h1 {text-align: center;}
+		body{ background: linear-gradient(60deg, #dcffb2, #87ffbb, #00d4ff); background-size: contain; min-height: 1000px; }
+		div {  text-align: ;}
+		span {border-bottom: 1px solid #c4c4c4;}
 		.done { text-decoration: line-through }
 		.nonDone {}
-		.txt { display: inline-flex; width: 30%;border-bottom: 1px solid #c4c4c4; padding: 6px 0px;}
+		.txt { display: inline-flex; width: 30%; padding: 6px 0px;}
 		.list {background: #fff; margin: 100px auto; width: 90%;max-width: 600px; border-radius: 8px;padding: 15px 5px;}
-		.num { display: inline-flex; width: 5%; border-bottom: 1px solid #c4c4c4; padding: 6px 0px; }
+		.num { display: inline-flex; width: 5%; padding: 6px 0px; }
 	</style>
 </head>
 <body>
@@ -35,6 +37,11 @@
 			</span>
 		</li>
 	</div>
+
+	<center>
+		<h2>IK qr code</h2>
+		<img src="http://qrcoder.ru/code/?https%3A%2F%2Fiskanderkurbanov.github.io%2F&4&0" width="148" height="148" border="0" title="QR код">
+	</center>
 
 	<script>
 	new Vue({

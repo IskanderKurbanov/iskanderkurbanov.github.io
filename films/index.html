@@ -14,9 +14,9 @@
 		span {border-bottom: 1px solid #c4c4c4;}
 		.done { text-decoration: line-through }
 		.nonDone {}
-		.txt { display: inline-flex; width: 30%; padding: 6px 0px;}
+		.txt { display: inline-flex; width: 40%; padding: 6px 0px;}
 		.list {background: #fff; margin: 100px auto; width: 90%;max-width: 600px; border-radius: 8px;padding: 15px 5px;}
-		.num { display: inline-flex; width: 5%; padding: 6px 0px; }
+		.num, .yer { display: inline-flex; width: 8%; padding: 6px 0px; }
 	</style>
 </head>
 <body>
@@ -27,13 +27,13 @@
 			<span v-if="datas['wtc'][item-1] == 'FALSE'" class="nonDone">
 				<div class="num">{{ item }}</div>
 				<div class="txt">{{ datas['name'][item-1] }}</div>
-				<div class="txt">{{ datas['year'][item-1] }}</div>
+				<div class="yer">{{ datas['year'][item-1] }}</div>
 				<div class="txt">{{ datas['gen'][item-1] }}</div>
 			</span>
 			<span v-if="datas['wtc'][item-1] == 'TRUE'" class="done">
 				<div class="num">{{ item }}</div>
 				<div class="txt">{{ datas['name'][item-1] }}</div>
-				<div class="txt">{{ datas['year'][item-1] }}</div>
+				<div class="yer">{{ datas['year'][item-1] }}</div>
 				<div class="txt">{{ datas['gen'][item-1] }}</div>
 			</span>
 		</li>

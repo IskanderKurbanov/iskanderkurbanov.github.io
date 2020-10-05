@@ -92,7 +92,7 @@ addPostBtc.addEventListener('click',()=>{
 //getData('https://knd-logs.herokuapp.com/person_chat')
 setInterval(() => {
 	getData('https://knd-logs.herokuapp.com/person_chat')
-	location.reload()
+	//location.reload()
 
 }, 15000);
 /*

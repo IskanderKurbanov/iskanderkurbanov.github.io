@@ -26,7 +26,10 @@ titleBtcName.forEach(item=>{
 async function getData(url) {
 	fetch(url)
 	.then(response=>response.json())
-	.then(data=>printContent(data, appContent)())
+	.then(data=>{
+		printContent(data, appContent)()
+		console.log(data)
+	})
 	.then(()=>updateListData())
 }
 

@@ -89,8 +89,12 @@ addPostBtc.addEventListener('click',()=>{
 
 
 
-getData('https://knd-logs.herokuapp.com/person_chat')
+//getData('https://knd-logs.herokuapp.com/person_chat')
+setInterval(() => {
+	getData('https://knd-logs.herokuapp.com/person_chat')
+	console.log('reload...')
 
+}, 2000);
 /*
 const requestPromiseGet = new Promise((resolve, reject)=>{
 	fetch('https://knd-logs.herokuapp.com/films')

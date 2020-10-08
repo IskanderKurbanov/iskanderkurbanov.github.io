@@ -1,0 +1,37 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, #dcffb2 0%, #db87ff 50%, #00d4ff 100%);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.screen {
+  width: 100%;
+  height: 100vh;
+}
+.screen__canvas {
+  width: 100%;
+  height: 80%;
+  background: #fff;
+  margin: 0px auto 2.5% auto;
+}
+.screen__hud {
+  width: 90%;
+  height: 10%;
+  background: #fff;
+  margin: 0px auto;
+}
+.screen__hud .controlBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

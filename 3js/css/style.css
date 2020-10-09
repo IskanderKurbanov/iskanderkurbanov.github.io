@@ -29,9 +29,19 @@ canvas {
   height: 10%;
   background: #fff;
   margin: 0px auto;
+  display: flex;
 }
 .screen__hud .controlBtn {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  padding: 5px;
+}
+.screen__hud .hideMouse {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0px 5px;
+}
+.screen__element {
+  width: 50%;
 }

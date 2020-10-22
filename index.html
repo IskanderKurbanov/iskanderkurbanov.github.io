@@ -1,93 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Iskander Kurbanov</title>
-	<meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<link rel="shortcut icon" href="img/k.png" type="image/png">
+	<link rel="shortcut icon" href="img/IK.svg" type="image/png">
+	<title>IskanderKurbanov</title>
 </head>
 <body>
-	<main id="work">
-		<name class="name text"></name>
-		<description class="desc text"></description>
-		
+	<div class="app">
+		<div class="app__name">Iskander Kurbanov.</div>
 
-		<portfolio class="portf"></portfolio>
+		<div class="app__skill-blocks">
+			
+			<div class="app__skill-box">
+				<div class="app__skill-title">
+					WEB
+				</div>
+					<div class="app__skill-description">
+						<ul>
+							<li>Python</li>
+							<li>JavaScript(ES6+)</li>
+							<li>HTML, CSS(SCSS)</li>
+							<li>SQL</li>
+						</ul>
+					</div>
+			</div>
 
-		<div class="about">
-			<aside class="">
-				Web
-			</aside>
-			<article>
-				<ul>
-					<li>Python</li>
-					<li>Vue.js</li>
-					<li>HTML, CSS</li>
-					<li>SQL</li>
-				</ul>
-			</article>
-			<aside class="">
-				3D
-			</aside>
-			<article>
-				<ul>
-					<li>Autodesk Inventor</li>
-					<li>SketchUp</li>
-				</ul>
-			</article>
-			<aside class="">
-				Design
-			</aside>
-			<article>
-				<ul>
-					<li>Adobe Illustrator</li>
-				</ul>
-			</article>
+			<div class="app__skill-box">
+				<div class="app__skill-title">
+					3D
+				</div>
+				<div class="app__skill-description">
+					<ul>
+						<li>Autodesk Inventor</li>
+						<li>SketchUp</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="app__skill-box">
+				<div class="app__skill-title">
+					Design
+				</div>
+				<div class="app__skill-description">
+					<ul>
+						<li>Adobe Illustrator</li>
+					</ul>
+				</div>
+			</div>
+
 		</div>
 
-		<ul class="link">
-			<li v-for="link in links"> <a :href=" link.lk " :class="link.cls" > {{ link.name }} </a></li>
-		</ul>
-
-		<!--<linkwork class="link"></linkwork>-->
-
-		<foot class="foot text"></foot>
-
-		
-		<div class="block__RPS">
-			<h1>{{ message }}</h1>
-			<div class="sml bot__hand">{{ botChoise | sml }}</div>
-			<button v-on:click="rockPapperScissors(1)" class="sml hov">&#9994</button>
-			<button v-on:click="rockPapperScissors(2)" class="sml hov">&#9995</button>
-			<button v-on:click="rockPapperScissors(3)" class="sml hov">&#9996</button>
+		<div class="app__portfolio">
+			...
 		</div>
 
-		
-
-		<center>
-			<h2>This page qr code</h2>
-			<img src="http://qrcoder.ru/code/?https%3A%2F%2Fiskanderkurbanov.github.io%2F&4&0" width="148" height="148" border="0" title="QR код">
-		</center>
-
-		
-	</main>
-	<div class="tic-tak">
-			<button class="cell" data-tab="1"></button>
-			<button class="cell" data-tab="2"></button>
-			<button class="cell" data-tab="3"></button>
-
-			<button class="cell" data-tab="4"></button>
-			<button class="cell" data-tab="5"></button>
-			<button class="cell" data-tab="6"></button>
-
-			<button class="cell" data-tab="7"></button>
-			<button class="cell" data-tab="8"></button>
-			<button class="cell" data-tab="9"></button>
+		<div class="app__foot">
+			
+			<div class="app__foot-description">
+				<div class="app__foot-year"><p>2020|Курбанов Искандер.</p><p>Thank you for visiting my site!</p></div>
+				<div class="app__foot-links">
+					<div class="app__position-links">
+						<a href="https://github.com/IskanderKurbanov/"><img src="img/logo-github.svg"></a>
+						<a href="https://www.instagram.com/lolikoroli/"><img src="img/logo-instagram.svg"></a>
+						<!--<a href=""><img src="img/logo-linkedin.svg"></a>-->
+					</div>
+				</div>
+			</div>
+			<div class="app__qrcode">
+				<img src="img/qr-code.gif" width="148" height="148" border="0" title="QR код">
+			</div>
 		</div>
-	<script type="text/javascript" src="js/app.js"></script>
-
+	</div>
+	
+	<script src="js/app.js"></script>
 
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript" >
@@ -103,7 +90,6 @@
 	</script>
 	<noscript><div><img src="https://mc.yandex.ru/watch/67288378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
-
 
 </body>
 </html>

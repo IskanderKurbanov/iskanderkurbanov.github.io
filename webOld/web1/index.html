@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Iskander Kurbanov</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="shortcut icon" href="img/k.png" type="image/png">
+</head>
+<body>
+	<main id="work">
+		<name class="name text"></name>
+		<description class="desc text"></description>
+		
+
+		<portfolio class="portf"></portfolio>
+
+		<div class="about">
+			<aside class="">
+				Web
+			</aside>
+			<article>
+				<ul>
+					<li>Python</li>
+					<li>Vue.js</li>
+					<li>HTML, CSS</li>
+					<li>SQL</li>
+				</ul>
+			</article>
+			<aside class="">
+				3D
+			</aside>
+			<article>
+				<ul>
+					<li>Autodesk Inventor</li>
+					<li>SketchUp</li>
+				</ul>
+			</article>
+			<aside class="">
+				Design
+			</aside>
+			<article>
+				<ul>
+					<li>Adobe Illustrator</li>
+				</ul>
+			</article>
+		</div>
+
+		<ul class="link">
+			<li v-for="link in links"> <a :href=" link.lk " :class="link.cls" > {{ link.name }} </a></li>
+		</ul>
+
+		<!--<linkwork class="link"></linkwork>-->
+
+		<foot class="foot text"></foot>
+
+		
+		<div class="block__RPS">
+			<h1>{{ message }}</h1>
+			<div class="sml bot__hand">{{ botChoise | sml }}</div>
+			<button v-on:click="rockPapperScissors(1)" class="sml hov">&#9994</button>
+			<button v-on:click="rockPapperScissors(2)" class="sml hov">&#9995</button>
+			<button v-on:click="rockPapperScissors(3)" class="sml hov">&#9996</button>
+		</div>
+
+		
+
+		<center>
+			<h2>This page qr code</h2>
+			<img src="http://qrcoder.ru/code/?https%3A%2F%2Fiskanderkurbanov.github.io%2F&4&0" width="148" height="148" border="0" title="QR код">
+		</center>
+
+		
+	</main>
+	<div class="tic-tak">
+			<button class="cell" data-tab="1"></button>
+			<button class="cell" data-tab="2"></button>
+			<button class="cell" data-tab="3"></button>
+
+			<button class="cell" data-tab="4"></button>
+			<button class="cell" data-tab="5"></button>
+			<button class="cell" data-tab="6"></button>
+
+			<button class="cell" data-tab="7"></button>
+			<button class="cell" data-tab="8"></button>
+			<button class="cell" data-tab="9"></button>
+		</div>
+	<script type="text/javascript" src="js/app.js"></script>
+
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
+	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+	m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	ym(67288378, "init", {
+		clickmap:true,
+		trackLinks:true,
+		accurateTrackBounce:true
+	});
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/67288378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+
+</body>
+</html>

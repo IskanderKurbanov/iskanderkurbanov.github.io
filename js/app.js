@@ -1,1 +1,1 @@
-console.log("Made by Iskander Kurbanov\nGithub: https://github.com/IskanderKurbanov/ \n...");
+console.log("Made by Iskander Kurbanov\nGithub: https://github.com/IskanderKurbanov/ \n...");const skillsLists=document.querySelectorAll(".app__list"),URL="https://knd-logs.herokuapp.com/webp";function sendRequest(t="GET",e){return fetch(e).then(t=>t.json())}function parseData(t){skillsLists.forEach(e=>{const n=e.getAttribute("data");let s=t.map(t=>n===t.dir?`<li>${t.text}</li>`:null);e.innerHTML=s.join("")})}sendRequest("GET",URL).then(t=>parseData(t));

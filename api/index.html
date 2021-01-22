@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.9">
+	<link rel="shortcut icon" href="../img/IK.svg" type="image/png">
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app" v-cloak>
+		<div class="conteiner">
+			<h1>{{ imgTitle }}</h1>
+			<div class="content">
+				<article class="imgContent">
+					<img :src="imgSrc">
+				</article>
+				<p>{{ imgDescription }}</p>
+			</div>
+			<a :href="hdImgSrc" target="_blank">original image</a>
+
+			<div class="foot">
+				2020/21 |Курбанов Искандер.  Thank you for visiting my site!
+			</div>
+		</div>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

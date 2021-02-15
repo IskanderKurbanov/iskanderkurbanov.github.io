@@ -12,7 +12,6 @@
   }
   .conteiner h1 {
     font-size: 50px;
-    border-bottom: 1px solid black;
     margin: 0px 0px 10px 0px;
   }
   .conteiner .imgContent {
@@ -29,8 +28,9 @@
   }
   .conteiner .content {
     display: flex;
+    border-top: 1px solid black;
     border-bottom: 1px solid black;
-    padding: 0px 0px 10px 0px;
+    padding: 15px 0px;
   }
   .conteiner a {
     color: #000;
@@ -38,6 +38,12 @@
   }
   .conteiner .foot {
     padding: 20px 0px;
+  }
+  .conteiner pre {
+    font-size: 20px;
+  }
+  .conteiner h1, .conteiner h2, .conteiner h3 {
+    font-family: "Roboto", sans-serif;
   }
 }
 @media (max-width: 1200px) {
@@ -48,7 +54,6 @@
   }
   .conteiner h1 {
     font-size: 50px;
-    border-bottom: 1px solid black;
     margin: 0px 0px 20px 0px;
   }
   .conteiner .imgContent {
@@ -64,8 +69,9 @@
     padding: 10px 0px;
   }
   .conteiner .content {
+    border-top: 1px solid black;
     border-bottom: 1px solid black;
-    padding: 0px 0px 20px 0px;
+    padding: 20px 0px;
   }
   .conteiner a {
     color: #000;
@@ -73,5 +79,11 @@
   }
   .conteiner .foot {
     padding: 20px 0px;
+  }
+  .conteiner pre {
+    font-size: 20px;
+  }
+  .conteiner h1, .conteiner h2, .conteiner h3 {
+    font-family: "Roboto", sans-serif;
   }
 }

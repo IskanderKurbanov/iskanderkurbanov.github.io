@@ -17,6 +17,7 @@
 	<div id="app" v-cloak>
 		<div class="conteiner">
 			<h1>{{ imgTitle }}</h1>
+			<h2>{{ apiDate }}</h2>
 			<div class="content">
 				<article class="imgContent">
 					<img :src="imgSrc">
@@ -24,9 +25,13 @@
 				<p>{{ imgDescription }}</p>
 			</div>
 			<a :href="hdImgSrc" target="_blank">original image</a>
+			<h3>copyright: {{ apiCopyright }}</h3>
 
 			<div class="foot">
-				2020/21 |Курбанов Искандер.  Thank you for visiting my site!
+				<pre>
+2020/21 |Курбанов Искандер.
+Thank you for visiting my site!
+				</pre>
 			</div>
 		</div>
 	</div>

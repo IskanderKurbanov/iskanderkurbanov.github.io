@@ -29,6 +29,42 @@ function parseData(data){
 		}
 	});
 }
+
+function weatherElement() {
+	document.querySelector(".weather_hiden").innerHTML = `<input type="" name="" class="weather" placeholder="write your city">`
+	document.querySelector('.weather').addEventListener('keypress', function (e) {
+    	if (e.key === 'Enter') {
+      		sendRequest('GET', `https://knd-logs.herokuapp.com/w/${document.querySelector('.weather').value}`)
+      			.then(data => {
+      				if(data){
+      					const weatherBlock = document.createElement('div')
+      					document.body.append(weatherBlock)
+      					weatherBlock.style.cssText = `
+      												text-align:center;
+      												border-radius: 25px;
+      												position: fixed;
+      												width: 150px;
+      												height: 200px;
+      												top: 50%;
+      												left: 50%;
+      												margin-top: -75px;
+      												margin-left: -70px;
+      												background-color:rgba(0, 0, 0, 0.8);
+      												`
+      					weatherBlock.innerHTML = `
+													<img src="${data.icon}">
+													<p>${data.city}</p>
+													<p>${data.description}</p>
+													<p>${data.feels_like}°C</p>
+												`
+						setTimeout(() => weatherBlock.remove(), 6000);
+      				}
+      			})
+      		document.querySelector('.weather').value = ""
+    	}
+	})
+}
+
 invColor = ['0','1']
 let i=1
 document.querySelector(".invert").addEventListener("click",()=>{
@@ -37,4 +73,8 @@ document.querySelector(".invert").addEventListener("click",()=>{
 	i==0?app__qrcode.style.cssText="transition:all .5s ease;":app__qrcode.style.cssText="display:none;transition:all .5s ease;"
 	if (i == invColor.length -1) i = 0;
 	else i++
-}) 
+})
+
+document.querySelector(".weather_hiden").addEventListener("dblclick",()=>weatherElement())
+
+document.querySelector(".weather_hiden").addEventListener('touchend', ()=>weatherElement())

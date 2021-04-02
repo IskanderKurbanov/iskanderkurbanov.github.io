@@ -35,6 +35,14 @@ a {
     font-size: 17.1428571429px;
 }
 
+.weather {
+    padding: 8px 5px;
+    color:var(--textColor);
+    background:var(--background);
+    border:0px;
+    outline:none;
+    border-bottom: 1px solid var(--textColor);
+}
 
 @media (min-width: 1200px) {
     .app {

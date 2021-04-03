@@ -30,32 +30,30 @@ function parseData(data){
 	});
 }
 
+localUrl = 'http://localhost:5000/w/'
+worldUrl = 'https://knd-logs.herokuapp.com/w/'
+
 function weatherElement() {
 	document.querySelector(".weather_hiden").innerHTML = `<input type="" name="" class="weather" placeholder="write your city">`
 	document.querySelector('.weather').addEventListener('keypress', function (e) {
     	if (e.key === 'Enter') {
-      		sendRequest('GET', `https://knd-logs.herokuapp.com/w/${document.querySelector('.weather').value}`)
+      		sendRequest('GET', `${worldUrl}${document.querySelector('.weather').value}`)
       			.then(data => {
       				if(data){
       					const weatherBlock = document.createElement('div')
       					document.body.append(weatherBlock)
-      					weatherBlock.style.cssText = `
-      												text-align:center;
-      												border-radius: 25px;
-      												position: fixed;
-      												width: 150px;
-      												height: 200px;
-      												top: 50%;
-      												left: 50%;
-      												margin-top: -75px;
-      												margin-left: -70px;
-      												background-color:rgba(0, 0, 0, 0.8);
-      												`
+      					weatherBlock.className = "weatherBlock"
       					weatherBlock.innerHTML = `
-													<img src="${data.icon}">
-													<p>${data.city}</p>
-													<p>${data.description}</p>
-													<p>${data.feels_like}°C</p>
+													<div style="display: flex;">
+														<img src="${data.icon}" alt="${data.main}" style="width:80px;height:80px;">
+														<aside>
+															<p style="font-size:36px;">${data.temp}°C</p>
+															<p style="font-size:14px;">feels like: ${data.feels_like}°C</p>
+															<p style="font-size:14px;">${data.description}</p>
+														</aside>
+													</div>
+													<p style="font-size:22px;border-top:1px solid white;">${data.city}</p>
+													
 												`
 						setTimeout(() => weatherBlock.remove(), 6000);
       				}

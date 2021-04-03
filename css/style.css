@@ -8,6 +8,7 @@
 
 :root {
 	--background: #0b0b0b;
+    --backgroundRGBA: rgba(45, 45, 45, 0.9);
 	--textColor:#fff;
 
 	--titleFontSize:8vw;
@@ -42,6 +43,28 @@ a {
     border:0px;
     outline:none;
     border-bottom: 1px solid var(--textColor);
+}
+.weatherBlock {
+    text-align:center;
+    border-radius: 10px;
+    position: fixed;
+    padding:10px;
+    //width: 170px;
+    //height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -90px;
+    margin-left: -98px;
+    background-color:var(--backgroundRGBA);
+    color:var(--textColor);
+    //filter: invert(100%);
+    animation:opacity-normal 6s;
+}
+@keyframes opacity-normal {
+  0% {opacity: 0;}
+  5% {opacity: 1;}
+  80% {opacity: 1;}
+  100% {opacity: 0;}
 }
 
 @media (min-width: 1200px) {

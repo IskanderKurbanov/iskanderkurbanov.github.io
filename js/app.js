@@ -5,33 +5,54 @@ console.log("%cMade by\n Iskander Kurbanov", css)
 console.log('Links: \n- https://linktr.ee/iskanderkurbanov \n github: https://github.com/IskanderKurbanov/ \n twitter: https://twitter.com/korolDev \n instagram: https://www.instagram.com/lolikoroli/ \n ...')
 
 const infoLists = document.querySelectorAll('.list')
+const app = document.querySelector('.app')
+app.style.display ="none"
 
+// weather urls
+const localUrl = 'http://localhost:5000/w/'
+const worldUrl = 'https://knd-logs.herokuapp.com/w/'
+
+// porfolio data urls
 const URL = 'https://knd-logs.herokuapp.com/webp'
+
+
+
+const loadBar = document.createElement('div')
+loadBar.className = "loadBar"
+document.body.append(loadBar)
+
+
+function loadContentDone() {
+	loadBar.remove()
+	app.style.display =""
+}
 
 function sendRequest(method='GET', url) {
 	return fetch(url).then(response => response.json())
 }
-sendRequest('GET', URL)
-  .then(data => parseData(data))
 
 function parseData(data){
 	infoLists.forEach( element => {
 		const dataInfoLists = element.getAttribute('data')
 		let content = data.map(item=>dataInfoLists===item.dir?`<li>${item.text}</li>`:null).filter(el=>el)
-		let workA = data.map(elen=>{
-			if(elen.dir==="work" && dataInfoLists==="work")
-				return `<article class="portfolio__work"><a href="${elen.position}"><div class="portfolio__img"><img src="${elen.src}" alt=""></div><div class="portfolio__description"><p>${elen.text}</p></div></a></article>`
-		}).filter(el=>el)
-		if (dataInfoLists==="work"){
-			element.innerHTML = workA.length>0 ? workA.join('') : '...'
-		}else{
-			element.innerHTML = content.length>0 ? content.join('') : '...'
-		}
+
+		element.innerHTML = content.length>0 ? content.join('') : '...'
+		
 	});
 }
 
-localUrl = 'http://localhost:5000/w/'
-worldUrl = 'https://knd-logs.herokuapp.com/w/'
+sendRequest('GET', URL)
+  .then(data => {
+  	parseData(data)
+  	loadContentDone()
+  })
+
+
+
+
+
+
+// Easter Egg {amount: 2}
 
 function weatherElement() {
 	document.querySelector(".weather_hiden").innerHTML = `<input type="" name="" class="weather" placeholder="write your city">`
@@ -62,6 +83,9 @@ function weatherElement() {
     	}
 	})
 }
+document.querySelector(".weather_hiden").addEventListener("dblclick",()=>weatherElement())
+document.querySelector(".weather_hiden").addEventListener('touchend', ()=>weatherElement())
+
 
 invColor = ['0','1']
 let i=1
@@ -72,7 +96,3 @@ document.querySelector(".invert").addEventListener("click",()=>{
 	if (i == invColor.length -1) i = 0;
 	else i++
 })
-
-document.querySelector(".weather_hiden").addEventListener("dblclick",()=>weatherElement())
-
-document.querySelector(".weather_hiden").addEventListener('touchend', ()=>weatherElement())

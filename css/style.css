@@ -36,6 +36,20 @@ a {
     font-size: 17.1428571429px;
 }
 
+.loadBar {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    border:2px dashed var(--textColor);
+    border-radius: 50%;
+    animation: spin-loadBar 2s infinite ease;
+}
+@keyframes spin-loadBar { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 .weather {
     padding: 8px 5px;
     color:var(--textColor);
@@ -160,25 +174,8 @@ a {
     .portfolio {
         min-height: 150px;
         font-size: 34px;
-        width: 92.5%;
-        margin-left: 7.5%;
         margin-top: 10%;
         margin-bottom: 5%;
-        display: flex;
-        overflow: auto
-    }
-
-    .portfolio__work {
-        min-width: 500px;
-        margin-right: 2%
-    }
-
-    .portfolio__work img,.portfolio__work p {
-        width: 100%
-    }
-
-    .portfolio__work p {
-        display: none
     }
 }
 
@@ -187,8 +184,13 @@ a {
 
 @media (max-width: 1200px) {
     .app {
-        width:85%;
+        width:100%;
         max-width: 1200px;
+        margin: 0px auto
+    }
+    
+    .app__name, .app__foot,.app__skill-blocks {
+        width:85%;
         margin: 0px auto
     }
 
@@ -198,7 +200,6 @@ a {
     }
 
     .app__skill-blocks {
-        width: 100%;
         max-width: 500px;
         margin: 0px auto
     }
@@ -238,7 +239,6 @@ a {
     }
 
     .app__foot {
-        width: 100%
     }
 
     .app__foot-description {
@@ -278,21 +278,7 @@ a {
     .portfolio {
         min-height: 150px;
         font-size: 34px;
-        width: 92.5%;
-        margin-left: 7.5%;
         margin-top: 10%;
         margin-bottom: 5%
-    }
-
-    .portfolio__work {
-        margin-bottom: 25px
-    }
-
-    .portfolio__work img,.portfolio__work p {
-        width: 100%
-    }
-
-    .portfolio__work p {
-        display: none
     }
 }

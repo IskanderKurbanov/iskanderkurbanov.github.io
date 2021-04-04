@@ -1,4 +1,5 @@
 /#source/
+/trainer/*
 *.scss
 *.config
 *_old.*

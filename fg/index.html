@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.9 user-scalable=no">
+
+	<meta name="theme-color" content="#f5d142">
+
+	<title>fag test</title>
+	<style type="text/css">
+		*{margin: 0px;padding:0px;}
+		body {background: #f5d142 ;}
+	</style>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/IskanderKurbanov/fastGalleryJS@latest/fag.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/IskanderKurbanov/fastGalleryJS@latest/fagStyle.min.css">
+
+</head>
+<body>
+	
+	
+	<div id="fg"></div>
+	
+
+	<script type="text/javascript">
+		url = 'https://knd-logs.herokuapp.com/tobitaro'
+
+		function sendRequest(method='GET', url) {
+			return fetch('https://knd-logs.herokuapp.com/tobitaro').then(response => response.json()) 
+		}
+		sendRequest(url)
+			.then(data=>{
+
+				new Fag({
+						tag: "#fg",
+						data: data,
+						defaultKey: {
+							img: "url",
+						}
+				},)
+
+			})
+		
+	</script>
+</body>
+</html>

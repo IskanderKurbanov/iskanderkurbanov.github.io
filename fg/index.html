@@ -11,6 +11,21 @@
 	<style type="text/css">
 		*{margin: 0px;padding:0px;}
 		body {background: #f5d142 ;}
+
+		.loadBar {
+		    position: fixed;
+		    width: 50px;
+		    height: 50px;
+		    top: 50%;
+		    left: 50%;
+		    margin-top: -25px;
+		    margin-left: -25px;
+		    border:2px dashed black;
+		    border-radius: 50%;
+		    animation: spin-loadBar 2s infinite ease;
+		}
+		@keyframes spin-loadBar { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 	</style>
 
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/IskanderKurbanov/fastGalleryJS@latest/fag.min.js"></script>
@@ -24,14 +39,23 @@
 	
 
 	<script type="text/javascript">
-		url = 'https://knd-logs.herokuapp.com/tobitaro'
+		const app = document.querySelector('#fg')
+		app.style.display ="none"
+		const loadBar = document.createElement('div')
+		loadBar.className = "loadBar"
+		document.body.append(loadBar)
 
-		function sendRequest(method='GET', url) {
+		function loadContentDone() {
+			loadBar.remove()
+			app.style.display =""
+		}
+
+
+		function sendRequest(method='GET') {
 			return fetch('https://knd-logs.herokuapp.com/tobitaro').then(response => response.json()) 
 		}
-		sendRequest(url)
+		sendRequest()
 			.then(data=>{
-
 				new Fag({
 						tag: "#fg",
 						data: data,
@@ -39,8 +63,8 @@
 							img: "url",
 						}
 				},)
-
 			})
+			.then(()=>setTimeout(loadContentDone, 500))
 		
 	</script>
 </body>

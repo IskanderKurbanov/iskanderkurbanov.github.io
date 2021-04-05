@@ -15,126 +15,121 @@ const worldUrl = 'https://knd-logs.herokuapp.com/w/'
 // porfolio data urls
 const URL = 'https://knd-logs.herokuapp.com/webp'
 
-
-
 const loadBar = document.createElement('div')
 loadBar.className = "loadBar"
 document.body.append(loadBar)
 
-
 function loadContentDone() {
-	loadBar.remove()
-	app.style.display =""
+  loadBar.remove()
+  app.style.display =""
 }
 
 function sendRequest(method='GET', url) {
-	return fetch(url).then(response => response.json())
+  return fetch(url).then(response => response.json())
 }
 
 function parseData(data){
-	infoLists.forEach( element => {
-		const dataInfoLists = element.getAttribute('data')
-		let content = data.map(item=>dataInfoLists===item.dir?`<li>${item.text}</li>`:null).filter(el=>el)
+  infoLists.forEach( element => {
+    const dataInfoLists = element.getAttribute('data')
+    let content = data.map(item=>dataInfoLists===item.dir?`<li>${item.text}</li>`:null).filter(el=>el)
 
-		element.innerHTML = content.length>0 ? content.join('') : '...'
-		
-	});
+    element.innerHTML = content.length>0 ? content.join('') : '...'
+    
+  });
 }
 
 sendRequest('GET', URL)
   .then(data => {
-  	parseData(data)
-  	loadContentDone()
+    parseData(data)
+    loadContentDone()
   })
-
-
-
-
-
 
 // Easter Egg {amount: 2}
 
+let isWeatherBlock = false
+
 function weatherElement() {
-	document.querySelector(".weather_hiden").innerHTML = `<input type="" name="" class="weather" placeholder="write your city">`
-	document.querySelector('.weather').addEventListener('keypress', function (e) {
-    	if (e.key === 'Enter') {
-      		sendRequest('GET', `${worldUrl}${document.querySelector('.weather').value}`)
-      			.then(data => {
-      				if(data){
-      					dataTime = new Date(data.time)
-
-      					curr_date = dataTime.getDate()
-      					curr_month = dataTime.getMonth() + 1
-      					curr_year = dataTime.getFullYear()
-
-      					curr_h = dataTime.getHours()
-      					curr_m = dataTime.getMinutes()
-      					curr_s = dataTime.getSeconds()
-
-      					timeW = curr_h+":"+curr_m+":"+curr_s
-						dateW = curr_date+'/'+curr_month+'/'+curr_year
-
-
-      					const weatherBlock = document.createElement('div')
-      					document.body.append(weatherBlock)
-      					weatherBlock.className = "weatherBlock"
-      					weatherBlock.innerHTML = `
-      												<div class="anchorBtn" onclick=""></div>
-													<div style="display: flex;margin-bottom:10px;">
-														<img src="${data.icon}" alt="${data.main}" style="width:80px;height:80px;">
-														<aside>
-															<p style="font-size:36px;">${data.temp}°C</p>
-															<p style="font-size:14px;">feels like: ${data.feels_like}°C</p>
-															<p style="font-size:14px;">${data.description}</p>
-														</aside>
-													</div>
-													<p style="font-size:42px;border-top:1px solid white;" class="timer"></p>
-													<p style="font-size:18px;">${dateW}</p>
-													<p style="font-size:18px;">${data.city}</p>
-												`
-						weatherBlock.querySelector('.timer').innerHTML = curr_h + ':' + curr_m + ':' + curr_s
-						setInterval(()=>{
-							curr_s++;
-						    if (curr_s >= 60){
-						        curr_s = 0
-						        curr_m++
-						    } else if (curr_m >= 60){
-						        curr_m = 0
-						        curr_h++
-						    } else if ( curr_h >= 24 ){
-						    	curr_h = 0
-						    }
-							weatherBlock.querySelector('.timer').innerHTML = curr_h + ':' + curr_m + ':' + curr_s
-						}, 1000 )
-
-						weatherBlock.querySelector('.anchorBtn').style.cssText = 'margin-left:auto;width:10px;height:10px;background:#d45b53;border-radius:50%;'
-						weatherBlock.querySelector('.anchorBtn').addEventListener('click', ()=>{
-								weatherBlock.remove()
-							}
-						)
-
-						//if(!anchor) setTimeout(() => weatherBlock.remove(), 6000);
-      				}
-      			})
-      		document.querySelector('.weather').value = ""
-    	}
-	})
+  document.querySelector(".weather_hiden").innerHTML = '<input type="" name="" class="weatherInput" placeholder="write your city">'
+  document.querySelector('.weatherInput').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+          sendRequest('GET', `${worldUrl}${document.querySelector('.weatherInput').value}`)
+            .then(data => createWeatherComponent(data))
+          document.querySelector('.weather_hiden').innerHTML = '2020/21 Курбанов Искандер.'
+      }
+  })
 }
-document.querySelector(".weather_hiden").addEventListener("dblclick",()=>weatherElement())
-document.querySelector(".weather_hiden").addEventListener('touchend', ()=>weatherElement())
 
+function createWeatherComponent(data) {
+  if(data){
+    dataTime = new Date(data.time)
+    curr_date = dataTime.getDate()
+    curr_month = dataTime.getMonth() + 1
+    curr_year = dataTime.getFullYear()
+    curr_h = dataTime.getHours()
+    curr_m = dataTime.getMinutes()
+    curr_s = dataTime.getSeconds()
+    dateW = curr_date+'/'+curr_month+'/'+curr_year
+    const weatherBlock = document.createElement('div')
+    document.body.append(weatherBlock)
+    weatherBlock.className = "weatherBlock"
+    weatherBlock.innerHTML = `
+                            <div style="display: flex;">
+                              <article class="anchorExtBtn"></article>
+                              <article class="anchorBtn"></article>
+                            </div>
+                            <div style="display: flex;margin-bottom:10px;">
+                            <img src="${data.icon}" alt="${data.main}" style="width:80px;height:80px;">
+                            <aside>
+                            <p style="font-size:36px;">${data.temp}°C</p>
+                            <p style="font-size:14px;">feels like: ${data.feels_like}°C</p>
+                            <p style="font-size:14px;">${data.description}</p>
+                            </aside>
+                            </div>
+                            <p class="timer"></p>
+                            <p style="font-size:18px;">${dateW}</p>
+                            <p style="font-size:18px;">${data.city}</p>
+                            `
+    weatherBlock.querySelector('.timer').innerHTML = curr_h + ':' + curr_m + ':' + curr_s
+    timeInterval=setInterval(()=>{
+      curr_s++;
+      if (curr_s >= 60){
+        curr_s = 0
+        curr_m++
+      } else if (curr_m >= 60){
+        curr_m = 0
+        curr_h++
+      } else if ( curr_h >= 24 ){
+        curr_h = 0
+      }
+      weatherBlock.querySelector('.timer').innerHTML = curr_h + ':' + curr_m + ':' + curr_s
+    }, 1000 )
+    weatherBlock.querySelector('.anchorExtBtn').addEventListener('click', ()=>{
+      weatherBlock.className=="weatherBlockExt"?weatherBlock.className="weatherBlock":weatherBlock.className="weatherBlockExt"
+    })
+    weatherBlock.querySelector('.anchorBtn').addEventListener('click', ()=>cloceWeatherComponent(weatherBlock, timeInterval))
+  }
+}
+
+function cloceWeatherComponent(object, timeInterval){
+  clearInterval(timeInterval)
+  object.remove()
+}
+
+document.querySelector(".weather_hiden").addEventListener("dblclick",()=>{
+  isWeatherBlock = !isWeatherBlock
+  if(isWeatherBlock) weatherElement()
+})
+document.querySelector(".weather_hiden").addEventListener('touchend', ()=>{
+  isWeatherBlock = !isWeatherBlock
+  if(isWeatherBlock) weatherElement()
+})
 
 invColor = ['0','1']
 let i=1
 document.querySelector(".invert").addEventListener("click",()=>{
-	app__qrcode = document.querySelector('.app__qrcode')
-	document.querySelector("html").style.cssText=`filter: invert(${invColor[i]});transition:all .5s ease;`
-	i==0?app__qrcode.style.cssText="transition:all .5s ease;":app__qrcode.style.cssText="display:none;transition:all .5s ease;"
-	if (i == invColor.length -1) i = 0;
-	else i++
+  app__qrcode = document.querySelector('.app__qrcode')
+  document.querySelector("html").style.cssText=`filter: invert(${invColor[i]});transition:all .5s ease;`
+  i==0?app__qrcode.style.cssText="transition:all .5s ease;":app__qrcode.style.cssText="display:none;transition:all .5s ease;"
+  if (i == invColor.length -1) i = 0;
+  else i++
 })
-
-
-function tick(){
-
-}

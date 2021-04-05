@@ -50,7 +50,7 @@ a {
 }
 @keyframes spin-loadBar { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-.weather {
+.weatherInput {
     padding: 8px 5px;
     color:var(--textColor);
     background:var(--background);
@@ -72,13 +72,29 @@ a {
     background-color:var(--backgroundRGBA);
     color:var(--textColor);
     //filter: invert(100%);
-    //animation:opacity-normal 6s;
+    animation:opacity-normal .5s;
 }
+.weatherBlockExt{
+    text-align:center;
+    border-radius: 5px;
+    position: fixed;
+    padding:10px;
+    min-width: 95%;
+    min-height: 95%;
+    top: 1%;
+    left: 2.5%;
+    background-color: rgba(45, 45, 45, 1) ;
+    color:var(--textColor);
+    font-size: 40px;
+}
+.weatherBlock .timer{font-size:42px;border-top:1px solid white;}
+.weatherBlockExt .timer{font-size:120px;border-top:1px solid white;}
+.anchorBtn, .anchorExtBtn{width:10px;height:10px;border-radius:50%;}
+.anchorExtBtn{margin-left:auto;background:#66d453;}
+.anchorBtn{margin-left:5px;background:#d45b53;}
 @keyframes opacity-normal {
   0% {opacity: 0;}
-  5% {opacity: 1;}
-  80% {opacity: 1;}
-  100% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 @media (min-width: 1200px) {

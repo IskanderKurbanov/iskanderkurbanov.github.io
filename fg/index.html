@@ -52,15 +52,17 @@
 
 
 		function sendRequest(method='GET') {
-			return fetch('https://knd-logs.herokuapp.com/tobitaro').then(response => response.json()) 
+			return fetch('http://localhost:5000/tobitaro').then(response => response.json()) 
 		}
 		sendRequest()
 			.then(data=>{
 				new Fag({
 						tag: "#fg",
-						data: data,
+						data: data.works,
+						//headlines: data.headlines,
 						defaultKey: {
 							img: "url",
+							text: "name",
 						}
 				},)
 			})

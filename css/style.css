@@ -1,4 +1,4 @@
-
+.FAG_aside {filter: grayscale(80%); }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 * {
@@ -63,16 +63,16 @@ a {
     border-radius: 10px;
     position: fixed;
     padding:10px;
-    //width: 170px;
+    max-width: 190px;
     //height: 200px;
     top: 50%;
     left: 50%;
-    margin-top: -90px;
+    margin-top: -120px;
     margin-left: -98px;
     background-color:var(--backgroundRGBA);
     color:var(--textColor);
     //filter: invert(100%);
-    animation:opacity-normal 6s;
+    //animation:opacity-normal 6s;
 }
 @keyframes opacity-normal {
   0% {opacity: 0;}

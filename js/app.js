@@ -61,11 +61,26 @@ function weatherElement() {
       		sendRequest('GET', `${worldUrl}${document.querySelector('.weather').value}`)
       			.then(data => {
       				if(data){
+      					dataTime = new Date(data.time)
+
+      					curr_date = dataTime.getDate()
+      					curr_month = dataTime.getMonth() + 1
+      					curr_year = dataTime.getFullYear()
+
+      					curr_h = dataTime.getHours()
+      					curr_m = dataTime.getMinutes()
+      					curr_s = dataTime.getSeconds()
+
+      					timeW = curr_h+":"+curr_m+":"+curr_s
+						dateW = curr_date+'/'+curr_month+'/'+curr_year
+
+
       					const weatherBlock = document.createElement('div')
       					document.body.append(weatherBlock)
       					weatherBlock.className = "weatherBlock"
       					weatherBlock.innerHTML = `
-													<div style="display: flex;">
+      												<div class="anchorBtn" onclick=""></div>
+													<div style="display: flex;margin-bottom:10px;">
 														<img src="${data.icon}" alt="${data.main}" style="width:80px;height:80px;">
 														<aside>
 															<p style="font-size:36px;">${data.temp}°C</p>
@@ -73,10 +88,32 @@ function weatherElement() {
 															<p style="font-size:14px;">${data.description}</p>
 														</aside>
 													</div>
-													<p style="font-size:22px;border-top:1px solid white;">${data.city}</p>
-													
+													<p style="font-size:42px;border-top:1px solid white;" class="timer"></p>
+													<p style="font-size:18px;">${dateW}</p>
+													<p style="font-size:18px;">${data.city}</p>
 												`
-						setTimeout(() => weatherBlock.remove(), 6000);
+						weatherBlock.querySelector('.timer').innerHTML = curr_h + ':' + curr_m + ':' + curr_s
+						setInterval(()=>{
+							curr_s++;
+						    if (curr_s >= 60){
+						        curr_s = 0
+						        curr_m++
+						    } else if (curr_m >= 60){
+						        curr_m = 0
+						        curr_h++
+						    } else if ( curr_h >= 24 ){
+						    	curr_h = 0
+						    }
+							weatherBlock.querySelector('.timer').innerHTML = curr_h + ':' + curr_m + ':' + curr_s
+						}, 1000 )
+
+						weatherBlock.querySelector('.anchorBtn').style.cssText = 'margin-left:auto;width:10px;height:10px;background:#d45b53;border-radius:50%;'
+						weatherBlock.querySelector('.anchorBtn').addEventListener('click', ()=>{
+								weatherBlock.remove()
+							}
+						)
+
+						//if(!anchor) setTimeout(() => weatherBlock.remove(), 6000);
       				}
       			})
       		document.querySelector('.weather').value = ""
@@ -96,3 +133,8 @@ document.querySelector(".invert").addEventListener("click",()=>{
 	if (i == invColor.length -1) i = 0;
 	else i++
 })
+
+
+function tick(){
+
+}

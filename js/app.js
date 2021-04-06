@@ -89,7 +89,7 @@ function createWeatherComponent(data) {
                             <p style="font-size:18px;">${dateW}</p>
                             <p style="font-size:18px;">${data.city}</p>
                             `
-    weatherBlock.querySelector('.timer').innerHTML = curr_h + ':' + curr_m + ':' + curr_s
+    weatherBlock.querySelector('.timer').innerHTML = curr_h + ':' + curr_m + '<span class="timerSecond">:' + curr_s + "</span>"
     timeInterval=setInterval(()=>{
       curr_s++;
       if (curr_s >= 60){
@@ -101,7 +101,7 @@ function createWeatherComponent(data) {
       } else if ( curr_h >= 24 ){
         curr_h = 0
       }
-      weatherBlock.querySelector('.timer').innerHTML = curr_h + ':' + curr_m + ':' + curr_s
+      weatherBlock.querySelector('.timer').innerHTML = curr_h + ':' + curr_m + '<span class="timerSecond">:' + curr_s + "</span>"
     }, 1000 )
     weatherBlock.querySelector('.anchorExtBtn').addEventListener('click', ()=>{
       weatherBlock.className=="weatherBlockExt"?weatherBlock.className="weatherBlock":weatherBlock.className="weatherBlockExt"

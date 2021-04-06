@@ -79,16 +79,17 @@ a {
     border-radius: 5px;
     position: fixed;
     padding:10px;
-    min-width: 95%;
+    min-width: 92%;
     min-height: 95%;
     top: 1%;
-    left: 2.5%;
+    left: 2%;
     background-color: rgba(45, 45, 45, 1) ;
     color:var(--textColor);
     font-size: 40px;
 }
 .weatherBlock .timer{font-size:42px;border-top:1px solid white;}
-.weatherBlockExt .timer{font-size:120px;border-top:1px solid white;}
+.weatherBlockExt .timer{font-size:10vw;border-top:1px solid white;}
+.weatherBlockExt .timerSecond {font-size:5vw}.weatherBlock .timerSecond{font-size:30px;}
 .anchorBtn, .anchorExtBtn{width:10px;height:10px;border-radius:50%;}
 .anchorExtBtn{margin-left:auto;background:#66d453;}
 .anchorBtn{margin-left:5px;background:#d45b53;}

@@ -146,6 +146,7 @@ function invertBackground() {
   else i++
 }
 
-
 let probability = Math.random();
+let probabilityFg = Math.random();
 if (probability < 0.01) invertBackground()
+if (probabilityFg < 0.05) document.querySelector('.thanks').innerHTML = '<a href="https://iskanderius.design/fg/">some sketches BYVEEEEEEE.</a>'

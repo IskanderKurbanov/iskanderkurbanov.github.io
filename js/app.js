@@ -5,8 +5,8 @@ console.log("%cMade by\n Iskander Kurbanov", css)
 console.log('Links: \n- https://linktr.ee/iskanderkurbanov \n github: https://github.com/IskanderKurbanov/ \n twitter: https://twitter.com/korolDev \n instagram: https://www.instagram.com/lolikoroli/ \n ...')
 
 const infoLists = document.querySelectorAll('.list')
-const app = document.querySelector('.app')
-app.style.display ="none"
+const app = document.querySelectorAll('.app__skill-box')
+app.forEach(el=>el.style.display ="none")
 
 // weather urls
 const localUrl = 'http://localhost:5000/w/'
@@ -16,12 +16,15 @@ const worldUrl = 'https://knd-logs.herokuapp.com/w/'
 const URL = 'https://knd-logs.herokuapp.com/webp'
 
 const loadBar = document.createElement('div')
+const loadBarPortfolio = document.createElement('div')
 loadBar.className = "loadBar"
-document.body.append(loadBar)
+loadBarPortfolio.className = "loadBar"
+document.querySelector(".app__skill-blocks").append(loadBar)
+//document.querySelector(".portfolio").append(loadBarPortfolio)
 
 function loadContentDone() {
   loadBar.remove()
-  app.style.display =""
+  app.forEach(el=>el.style.display ="")
 }
 
 function sendRequest(method='GET', url) {
@@ -44,6 +47,8 @@ sendRequest('GET', URL)
     loadContentDone()
   })
 
+
+
 // Easter Egg {amount: 2}
 
 let isWeatherBlock = false
@@ -52,8 +57,11 @@ function weatherElement() {
   document.querySelector(".weather_hiden").innerHTML = '<input type="" name="" class="weatherInput" placeholder="write your city">'
   document.querySelector('.weatherInput').addEventListener('keypress', function (e) {
       if (e.key === 'Enter') {
+
           sendRequest('GET', `${worldUrl}${document.querySelector('.weatherInput').value}`)
             .then(data => createWeatherComponent(data))
+          
+
           document.querySelector('.weather_hiden').innerHTML = '2020/21 Курбанов Искандер.'
       }
   })
@@ -127,9 +135,17 @@ document.querySelector(".weather_hiden").addEventListener('touchend', ()=>{
 invColor = ['0','1']
 let i=1
 document.querySelector(".invert").addEventListener("click",()=>{
+  invertBackground()
+})
+
+function invertBackground() {
   app__qrcode = document.querySelector('.app__qrcode')
   document.querySelector("html").style.cssText=`filter: invert(${invColor[i]});transition:all .5s ease;`
   i==0?app__qrcode.style.cssText="transition:all .5s ease;":app__qrcode.style.cssText="display:none;transition:all .5s ease;"
   if (i == invColor.length -1) i = 0;
   else i++
-})
+}
+
+
+let probability = Math.random();
+if (probability < 0.01) invertBackground()

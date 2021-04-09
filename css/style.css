@@ -37,13 +37,14 @@ a {
 }
 
 .loadBar {
-    position: fixed;
+    //position: relative;
     width: 50px;
     height: 50px;
+    margin: 10px auto;
     top: 50%;
-    left: 50%;
-    margin-top: -25px;
-    margin-left: -25px;
+    //left: 50%;
+    //margin-top: -25px;
+    //margin-left: -25px;
     border:2px dashed var(--textColor);
     border-radius: 50%;
     animation: spin-loadBar 2s infinite ease;
@@ -97,6 +98,8 @@ a {
   0% {opacity: 0;}
   100% {opacity: 1;}
 }
+
+.app__skill-blocks {min-height: 70px;}
 
 @media (min-width: 1200px) {
     .app {
@@ -189,7 +192,7 @@ a {
     }
 
     .portfolio {
-        min-height: 150px;
+        min-height: 300px;
         font-size: 34px;
         margin-top: 10%;
         margin-bottom: 5%;
@@ -293,7 +296,7 @@ a {
     }
 
     .portfolio {
-        min-height: 150px;
+        min-height: 250px;
         font-size: 34px;
         margin-top: 10%;
         margin-bottom: 5%

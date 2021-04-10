@@ -299,6 +299,7 @@ a {
         min-height: 250px;
         font-size: 34px;
         margin-top: 10%;
-        margin-bottom: 5%
+        margin-bottom: 5%;
+        text-align: center;
     }
 }

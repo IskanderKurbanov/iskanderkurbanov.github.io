@@ -22,6 +22,11 @@
     height: auto;
     max-width: 700px;
   }
+  .conteiner iframe {
+    width: 100%;
+    min-height: 400px;
+    max-width: 700px;
+  }
   .conteiner p {
     width: 100%;
     padding: 0px 10px;
@@ -59,9 +64,13 @@
   .conteiner .imgContent {
     width: 100%;
   }
-  .conteiner img {
+  .conteiner img{
     width: 100%;
     height: auto;
+    max-width: 700px;
+  }
+  .conteiner iframe {
+    width: 100%;
     max-width: 700px;
   }
   .conteiner p {

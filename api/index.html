@@ -20,12 +20,17 @@
 			<h2>{{ apiDate }}</h2>
 			<div class="content">
 				<article class="imgContent">
-					<img :src="imgSrc">
+					<div v-if="apiContent === 'image'">
+						<img :src="imgSrc">
+					</div>
+					<div v-else>
+						<iframe :src="videoSrc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
 				</article>
 				<p>{{ imgDescription }}</p>
 			</div>
-			<a :href="hdImgSrc" target="_blank">original image</a>
-			<h3>copyright: {{ apiCopyright }}</h3>
+			{{ hdImgSrc }}
+			<h3>{{ apiCopyright }}</h3>
 
 			<div class="foot">
 				<p>2020/21 |Курбанов Искандер.</p>
@@ -36,7 +41,5 @@
 
 	<script src="https://unpkg.com/vue@next"></script>
 	<script src="js/main.js"></script>
-
-	<script src="js/app.js"></script>
 </body>
 </html>

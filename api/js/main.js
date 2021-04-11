@@ -1,1 +1,52 @@
-const URL="https://api.nasa.gov/planetary/apod?api_key=zsEArWGzZwrMvvcHyyco2RcWCvgd3lNSOkZLXEGc",App={data:()=>({apiData:"",imgSrc:"",imgTitle:"...",imgDescription:"...",hdImgSrc:"...",apiDate:"...",apiCopyright:"..."}),methods:{sendRequest(t){return fetch(t).then((t=>t.json())).then((t=>{this.apiData=t,this.imgTitle=t.title,this.imgSrc=t.url,this.imgDescription=t.explanation,this.hdImgSrc=t.hdurl,this.apiDate=t.date,this.apiCopyright=t.copyright}))}},mounted(){this.sendRequest(URL)}};Vue.createApp(App).mount("#app");
+
+const URL = 'https://api.nasa.gov/planetary/apod?api_key=zsEArWGzZwrMvvcHyyco2RcWCvgd3lNSOkZLXEGc'
+
+/*
+function sendRequest(method='GET', url) {
+  return fetch(url).then(response => response.json())
+}
+sendRequest('GET', URL)
+  .then(data => console.log(data))
+*/
+
+const App = {
+  data() {
+    return {
+      apiData: '',
+      apiContent: '',
+
+      imgSrc: '',
+      imgTitle: '...',
+      imgDescription: '...',
+      hdImgSrc: '',
+
+      videoSrc: '',
+
+      apiDate: '...',
+      apiCopyright: '',
+    }
+  },
+  methods: {
+    sendRequest(url) {
+      return fetch(url)
+        .then(response => response.json())
+        .then(data => this.printData(data))
+    },
+    printData(data){
+    	this.apiData = data
+		  this.imgTitle = data.title
+		  this.imgDescription = data.explanation
+		  this.apiDate = data.date
+		  if (data.media_type == "image") this.apiContent = data.media_type
+      data.url?this.imgSrc = data.url:this.imgSrc = ''
+      data.hdurl?this.hdImgSrc = `<a :href="${data.hdurl}" target="_blank">original image</a>`: this.hdImgSrc = ' '
+      data.media_type=="video"? this.videoSrc = data.url : this.videoSrc = ""
+		  if (data.copyright) this.apiCopyright = 'copyright: ' + data.copyright
+    }
+  },
+  mounted() {
+    this.sendRequest(URL)
+  }
+}
+
+Vue.createApp(App).mount('#app')

@@ -39,7 +39,7 @@ const App = {
 		  this.apiDate = data.date
 		  if (data.media_type == "image") this.apiContent = data.media_type
       data.url?this.imgSrc = data.url:this.imgSrc = ''
-      data.hdurl?this.hdImgSrc = `<a :href="${data.hdurl}" target="_blank">original image</a>`: this.hdImgSrc = ' '
+      if(data.hdurl)this.hdImgSrc = data.hdurl
       data.media_type=="video"? this.videoSrc = data.url : this.videoSrc = ""
 		  if (data.copyright) this.apiCopyright = 'copyright: ' + data.copyright
     }

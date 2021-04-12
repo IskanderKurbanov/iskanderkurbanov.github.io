@@ -29,12 +29,11 @@
 				</article>
 				<p>{{ imgDescription }}</p>
 			</div>
-			{{ hdImgSrc }}
+			<a v-if="hdImgSrc" :href="hdImgSrc" target="_blank">original image</a>
 			<h3>{{ apiCopyright }}</h3>
 
 			<div class="foot">
 				<p>2020/21 |Курбанов Искандер.</p>
-				<p>Thank you for visiting my site!</p>
 			</div>
 		</div>
 	</div>

@@ -86,13 +86,13 @@ a {
     left: 2%;
     background-color: rgba(45, 45, 45, 1) ;
     color:var(--textColor);
-    font-size: 40px;
 }
 .weatherBlock .timer{font-size:42px;border-top:1px solid white;}
-.weatherBlockExt .timer{font-size:10vw;border-top:1px solid white;}
-.weatherBlockExt .timerSecond {font-size:5vw}.weatherBlock .timerSecond{font-size:30px;}
-.anchorBtn, .anchorExtBtn{width:10px;height:10px;border-radius:50%;}
+.weatherBlockExt .timer{font-size:15vw;border-top:1px solid white;}
+.weatherBlockExt .timerSecond {font-size:6vw}.weatherBlock .timerSecond{font-size:30px;}
+.anchorBtn, .anchorDrgBtn, .anchorExtBtn{width:10px;height:10px;border-radius:50%;}
 .anchorExtBtn{margin-left:auto;background:#66d453;}
+.anchorDrgBtn{margin-left:5px;background:#03fcf8;}
 .anchorBtn{margin-left:5px;background:#d45b53;}
 @keyframes opacity-normal {
   0% {opacity: 0;}

@@ -195,7 +195,6 @@ let i=1
 document.querySelector(".invert").addEventListener("click",()=>{
   invertBackground()
 })
-
 function invertBackground() {
   app__qrcode = document.querySelector('.app__qrcode')
   document.querySelector("html").style.cssText=`filter: invert(${invColor[i]});transition:all .5s ease;`
@@ -206,5 +205,30 @@ function invertBackground() {
 
 let probability = Math.random();
 let probabilityFg = Math.random();
-if (probability < 0.01) invertBackground()
-if (probabilityFg < 0.05) document.querySelector('.thanks').innerHTML = '<a href="https://iskanderius.design/fg/">some sketches BYVEEEEEEE.</a>'
+
+if (probability < 0.01) {
+  document.querySelector(".invert").innerHTML = '_'
+  document.querySelector(".invert").style.cssText = 'animation: opacity-normal 1.5s infinite ease'
+  invertBackground()
+} 
+if (probabilityFg < 0.05) 
+  document.querySelector('.thanks').innerHTML = '<a href="https://iskanderius.design/fg/">some sketches BYVEEEEEEE.</a>'
+
+if (probabilityFg < 0.0001) {
+  document.querySelector('.portfolio').innerHTML = ''
+  const loadBarWorks = document.createElement('div')
+  document.querySelector(".portfolio").append(loadBarWorks)
+  loadBarWorks.className = "loadBar"
+  document.querySelector(".portfolio").style.fontSize = '18px'
+  function sendRequest(method='GET') {
+    return fetch('https://knd-logs.herokuapp.com/tobitaro').then(response => response.json()) 
+  }
+  sendRequest()
+    .then(data=>{
+      document.querySelector('.portfolio').innerHTML = '<div id="fg"></div>'
+      new Fag({
+          tag: "#fg",
+          data: data.works,
+      },)
+    })
+}

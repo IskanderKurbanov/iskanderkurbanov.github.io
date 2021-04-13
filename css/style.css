@@ -1,6 +1,10 @@
 .FAG_aside {filter: grayscale(80%); }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+@keyframes opacity-normal { 0% {opacity: 0;} 100% {opacity: 1;} }
+@keyframes spin-loadBar { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 * {
     margin: 0px;
     padding: 0px
@@ -12,6 +16,7 @@
 	--textColor:#fff;
 
 	--titleFontSize:8vw;
+    --mobileTitleFontSize:10vw;
 	--textFontSize:18px;
 	--fontFamily: 'Roboto', sans-serif;
 
@@ -19,10 +24,15 @@
 	--tabletScreen:768px;
 
 	--contentWidth: 85%;
+
+
+    --backgroundLight: #b5b5b5;
+    --backgroundRGBALight: rgba(210, 210, 210, 0.5);
+    --textColorLight:#000;
+
+    --orange:#fa8900;
 }
-html {
-    //filter: invert(100%);
-}
+html {}
 
 body {
     background: var(--background);
@@ -33,23 +43,21 @@ body {
 
 a {
     color: var(--textColor);
-    font-size: 17.1428571429px;
+    font-size: var(--textFontSize:);
 }
 
+.app__foot-year a { text-decoration: none; }
+
+.app__foot-year p { padding: .5px 0px; }
+
 .loadBar {
-    //position: relative;
-    width: 50px;
-    height: 50px;
+    width: 50px;height: 50px;
     margin: 10px auto;
     top: 50%;
-    //left: 50%;
-    //margin-top: -25px;
-    //margin-left: -25px;
     border:2px dashed var(--textColor);
     border-radius: 50%;
     animation: spin-loadBar 2s infinite ease;
 }
-@keyframes spin-loadBar { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .weatherInput {
     padding: 8px 5px;
@@ -65,14 +73,12 @@ a {
     position: fixed;
     padding:10px;
     max-width: 190px;
-    //height: 200px;
     top: 50%;
     left: 50%;
     margin-top: -120px;
     margin-left: -98px;
     background-color:var(--backgroundRGBA);
     color:var(--textColor);
-    //filter: invert(100%);
     animation:opacity-normal .5s;
 }
 .weatherBlockExt{
@@ -94,12 +100,13 @@ a {
 .anchorExtBtn{margin-left:auto;background:#66d453;}
 .anchorDrgBtn{margin-left:5px;background:#03fcf8;}
 .anchorBtn{margin-left:5px;background:#d45b53;}
-@keyframes opacity-normal {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
 
-.app__skill-blocks {min-height: 70px;}
+.portfolio {
+    min-height: 300px;
+    font-size: 40px;
+    padding: 80px 0px;
+}
+.portfolio .FAG_tools{ border-bottom: 1px solid var(--textColor); }
 
 @media (min-width: 1200px) {
     .app {
@@ -115,7 +122,8 @@ a {
 
     .app__skill-blocks {
         display: flex;
-        width: 100%
+        width: 100%;
+        min-height: 165px;
     }
 
     .app__skill-box {
@@ -124,9 +132,7 @@ a {
         margin-right: 2%
     }
 
-    .app__skill-box:last-child {
-        margin-right: 0%
-    }
+    .app__skill-box:last-child {margin-right: 0%}
 
     .app__skill-title {
         padding: 25px 0px 5px 0px;
@@ -149,14 +155,11 @@ a {
         padding: 1px
     }
 
-    .app__foot-sign {
-        text-align: right
-    }
+    .app__foot-sign { text-align: right }
 
     .app__foot {
         display: flex;
         width: 100%;
-        height: 149px
     }
 
     .app__foot-description {
@@ -169,34 +172,9 @@ a {
         font-size: 24px
     }
 
-    .app__foot-links {
-        width: 50%;
-        height: 149px
-    }
+    .app__qrcode {width: 148px;}
 
-    .app__position-links {
-        text-align: right;
-        padding-top: 29px
-    }
-
-    .app__position-links img {
-        filter: invert(100%);
-        max-width: 90px;
-        width: 20%;
-        padding-right: 20px
-    }
-
-    .app__qrcode {
-        width: 149px;
-        height: 149px
-    }
-
-    .portfolio {
-        min-height: 300px;
-        font-size: 34px;
-        margin-top: 10%;
-        margin-bottom: 5%;
-    }
+    .app__foot, .app__qrcode{ height: 148px; }
 }
 
 
@@ -215,7 +193,7 @@ a {
     }
 
     .app__name {
-        font-size: var(--titleFontSize);
+        font-size: var(--mobileTitleFontSize);
         padding: 40px 0px 60px 0px
     }
 
@@ -229,9 +207,7 @@ a {
         margin: 2% 0px
     }
 
-    .app__skill-box:last-child {
-        margin-right: 0%
-    }
+    .app__skill-box:last-child { margin-right: 0% }
 
     .app__skill-title {
         padding: 25px 0px 5px 0px;
@@ -254,37 +230,15 @@ a {
         padding: 1px
     }
 
-    .app__foot-sign {
-        text-align: right
-    }
+    .app__foot-sign { text-align: right }
 
-    .app__foot {
-    }
+    .app__foot {min-height: 148px;}
 
-    .app__foot-description {
-        width: 100%
-    }
+    .app__foot-description { width: 100%}
 
     .app__foot-year {
         width: 100%;
         font-size: 24px
-    }
-
-    .app__foot-links {
-        width: 100%
-    }
-
-    .app__position-links {
-        display: block;
-        text-align: center;
-        padding-top: 50px
-    }
-
-    .app__position-links img {
-        filter: invert(100%);
-        max-width: 70px;
-        width: 50%;
-        padding: 0px 15px
     }
 
     .app__qrcode {
@@ -292,14 +246,12 @@ a {
         place-items: center;
         margin: 30px 0px 0px 0px;
         width: 100%;
-        height: 149px
+        height: 148px;
     }
 
-    .portfolio {
-        min-height: 250px;
-        font-size: 34px;
-        margin-top: 10%;
-        margin-bottom: 5%;
-        text-align: center;
-    }
+    .portfolio { text-align: center; }
 }
+
+/*  COLORs  */
+
+

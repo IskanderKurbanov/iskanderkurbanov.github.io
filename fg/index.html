@@ -66,13 +66,15 @@
 				new Fag({
 						tag: "#fg",
 						data: data.works,
-						//headlines: data.headlines,
-						//defaultKey: {
-						//	img: "url",
-						//	text: "name",
-						//}
 				},)
+				
 				document.querySelector('footer').style.display=""
+
+				var link = document.querySelector("link[rel*='icon']") || document.createElement('link')
+				link.type = 'image/x-icon'
+				link.rel = 'shortcut icon'
+				link.href = data.works[0].img
+				document.getElementsByTagName('head')[0].appendChild(link)
 			})
 			.then(()=>setTimeout(loadContentDone, 500))
 		

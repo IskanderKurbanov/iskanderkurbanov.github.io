@@ -192,15 +192,18 @@ class WeatherApplet{
 
 invColor = ['0','1']
 let i=1
+let changeBackgraund = true
 document.querySelector(".invert").addEventListener("click",()=>{
   invertBackground()
 })
 function invertBackground() {
-  app__qrcode = document.querySelector('.app__qrcode')
-  document.querySelector("html").style.cssText=`filter: invert(${invColor[i]});transition:all .5s ease;`
-  i==0?app__qrcode.style.cssText="transition:all .5s ease;":app__qrcode.style.cssText="display:none;transition:all .5s ease;"
-  if (i == invColor.length -1) i = 0;
-  else i++
+  if(changeBackgraund){
+    app__qrcode = document.querySelector('.app__qrcode')
+    document.querySelector("html").style.cssText=`filter: invert(${invColor[i]});transition:all .5s ease;`
+    i==0?app__qrcode.style.cssText="transition:all .5s ease;":app__qrcode.style.cssText="display:none;transition:all .5s ease;"
+    if (i == invColor.length -1) i = 0
+    else i++
+  }
 }
 
 let probability = Math.random();
@@ -210,25 +213,16 @@ if (probability < 0.01) {
   document.querySelector(".invert").innerHTML = '_'
   document.querySelector(".invert").style.cssText = 'animation: opacity-normal 1.5s infinite ease'
   invertBackground()
-} 
+} else if (probability < 0.02) {
+  document.querySelector('body').style.cssText=`background:#7b917b;`
+  document.querySelector(".invert").style.cssText = 'animation: opacity-normal 1.5s infinite ease'
+  document.querySelector(".invert").innerHTML = '<span style="font-size:14px;">(#7b917b)</span>'
+  changeBackgraund = false
+} else if (probability < 0.03) {
+  document.querySelector('body').style.cssText = "background: linear-gradient(to bottom, #5ebd3e 16%, #ffb900 16% 32%, #f78200 32% 48%, #e23838 48% 64%, #973999 64% 80%, #009cdf 80%);"
+  changeBackgraund = false
+}
 if (probabilityFg < 0.05) 
   document.querySelector('.thanks').innerHTML = '<a href="https://iskanderius.design/fg/">some sketches BYVEEEEEEE.</a>'
 
-if (probabilityFg < 0.0001) {
-  document.querySelector('.portfolio').innerHTML = ''
-  const loadBarWorks = document.createElement('div')
-  document.querySelector(".portfolio").append(loadBarWorks)
-  loadBarWorks.className = "loadBar"
-  document.querySelector(".portfolio").style.fontSize = '18px'
-  function sendRequest(method='GET') {
-    return fetch('https://knd-logs.herokuapp.com/tobitaro').then(response => response.json()) 
-  }
-  sendRequest()
-    .then(data=>{
-      document.querySelector('.portfolio').innerHTML = '<div id="fg"></div>'
-      new Fag({
-          tag: "#fg",
-          data: data.works,
-      },)
-    })
-}
+

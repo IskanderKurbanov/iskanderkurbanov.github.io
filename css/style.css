@@ -54,8 +54,10 @@ a {
     width: 50px;height: 50px;
     margin: 10px auto;
     top: 50%;
-    border:2px dashed var(--textColor);
+    //border:2px dashed var(--textColor);
     border-radius: 50%;
+    border: 2px solid grey;
+    border-bottom-color: white;
     animation: spin-loadBar 2s infinite ease;
 }
 

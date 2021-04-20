@@ -5,13 +5,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=0.9 user-scalable=no">
 
-	<meta name="theme-color" content="#f5d142">
+	<meta name="theme-color" content="#000">
 
 	<title>fag test</title>
 	<style type="text/css">
 		*{margin: 0px;padding:0px;}
-		body {background: #f5d142 ;}
-		footer {background: #f7e392;border-top: 1px solid #000;text-align: center;padding: 10px 5px; margin-top: 250px; }
+		body {background: #f5d142 ;
+			background: linear-gradient(to bottom, #5ebd3e 16%, #ffb900 16% 32%, #f78200 32% 48%, #e23838 48% 64%, #973999 64% 80%, #009cdf 80%);
+		}
+		footer {background: #fff;text-align: center;padding: 10px 5px; margin-top: 250px; }
 		a{color:#000;}
 
 		.loadBar {
@@ -22,7 +24,8 @@
 		    left: 50%;
 		    margin-top: -25px;
 		    margin-left: -25px;
-		    border:2px dashed black;
+		    border:2px solid grey;
+		    border-bottom-color: black;
 		    border-radius: 50%;
 		    animation: spin-loadBar 2s infinite ease;
 		}

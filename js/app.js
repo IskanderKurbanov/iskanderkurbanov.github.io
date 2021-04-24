@@ -223,6 +223,19 @@ if (probability < 0.01) {
   changeBackgraund = false
 }
 if (probabilityFg < 0.05) 
-  document.querySelector('.thanks').innerHTML = '<a href="https://iskanderius.design/fg/">some sketches BYVEEEEEEE.</a>'
+  document.querySelector('.thanks').innerHTML = '<a href="https://iskanderius.design/tbtr/">some sketches BYVEEEEEEE.</a>'
 
+document.querySelector('.next_img').style.display = 'none'
+let imgLimit = 5
+document.querySelector('.IMAGE_VIEWER').addEventListener('dblclick', ()=>{
+  sendRequest('GET', `https://knd-logs.herokuapp.com/tobitaro/${imgLimit}`)
+    .then(data => {
+      document.querySelector('.next_img').style.display = 'block'
+      let i = 0
+      document.querySelector('.next_img').addEventListener('click',()=>{
+        if((i)==imgLimit) i=0
+        document.querySelector('.sketches').style.cssText = `background-image:url( ${data[i++].url} );background-repeat:no-repeat;background-size:contain;background-position:center center; height: 500px;`
+      })
+    })
+})
 

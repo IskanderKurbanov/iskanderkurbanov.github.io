@@ -39,6 +39,8 @@ body {
     color:  var(--textColor);
     font-size: var(--textFontSize);
     font-family: var(--fontFamily);
+
+    animation: opacity-normal 2s;
 }
 
 a {
@@ -110,6 +112,17 @@ a {
 }
 .portfolio .FAG_tools{ border-bottom: 1px solid var(--textColor); }
 
+.next_img {
+    width: 50px;height: 50px;
+    //border:1px solid #000;
+    //border-radius: 50%;
+    font-size: 50px;
+    position: fixed;
+    top:50%;
+    padding: 0px;
+}
+.sketches {width: 100%; height: 500px;}
+
 @media (min-width: 1200px) {
     .app {
         width:85%;
@@ -119,7 +132,7 @@ a {
 
     .app__name {
         font-size: var(--titleFontSize);
-        padding: 60px 0px 90px 0px
+        padding: 60px 0px 90px 0px;
     }
 
     .app__skill-blocks {
@@ -176,7 +189,10 @@ a {
 
     .app__qrcode {width: 148px;}
 
-    .app__foot, .app__qrcode{ height: 148px; }
+    .app__foot, .app__qrcode { height: 148px; }
+
+    .portfolio {}
+    .next_img { left:95%; }
 }
 
 
@@ -196,7 +212,7 @@ a {
 
     .app__name {
         font-size: var(--mobileTitleFontSize);
-        padding: 40px 0px 60px 0px
+        padding: 40px 0px 60px 0px;
     }
 
     .app__skill-blocks {
@@ -252,6 +268,7 @@ a {
     }
 
     .portfolio { text-align: center; }
+    .next_img{ left:90%; }
 }
 
 /*  COLORs  */

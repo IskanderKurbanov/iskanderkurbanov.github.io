@@ -120,6 +120,7 @@ a {
     position: fixed;
     top:50%;
     padding: 0px;
+    //background: var(--backgroundRGBA);
 }
 .sketches {width: 100%; height: 500px;}
 

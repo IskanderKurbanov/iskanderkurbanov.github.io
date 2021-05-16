@@ -1,0 +1,14 @@
+* { margin: 0px; padding: 0px; }
+.paintTest { width: 450px; height: 100%; border: 1px solid #000; background: #e0e0e0;margin: 0px auto;}
+#canvas { background: #fff;}
+.paintTools { /*height: 50px;*/ display: inline-flex; }
+.colorPicker {display: flex; margin: 5px; }.colorPicker .color{width: 20px;height: 20px; }
+.red{background: #fc0303;}.green{background: #03fc07;}.blue{background: #0331fc;}
+.black{background: #000;}.white{background: #fff;}.grey{background: #878787;}
+input, button {margin: 5px;}
+
+
+
+@media (max-width: 1200px) {
+	#canvas, .paintTools { width: 100%;}
+}

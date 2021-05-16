@@ -11,16 +11,14 @@
 	<div class="paintTest">
 		<canvas id="canvas"></canvas>
 		<aside class="paintTools">
-			<aside class="colorPicker">
-				<div class="color red" data="red"></div>
-				<div class="color green" data="green"></div>
-				<div class="color blue" data="blue"></div>
-				<div class="color black" data="black"></div>
-				<div class="color white" data="white"></div>
-				<div class="color grey" data="grey"></div>
+			<input type="color" class="colorPicker" value="#ff0000">
+			<aside class="paintToolSize">
+				<span class="sizeLable">50</span><input type="range" min="0" max="100" step="1" value="50" class="pointerSize">
 			</aside>
-			<input type="color" class="colorPicker2" value="#ff0000">
-			<input type="number" min="1" max="100" class="pointerSize" value="5">
+			<!--<aside class="paintToolScale">
+				<button class="scaleCanvas" data="plus">+ </button>
+				<button class="scaleCanvas" data="minus">- </button>
+			</aside>-->
 			<button class="clear">clear</button>
 			<button class="save">save</button>
 		</aside>

@@ -2,16 +2,22 @@
 
 
 .paintTest {
-	width: 450px;
-	height: 100%;
+	width: 500px;
+	height: 500px;
+
+	//margin: 0px auto;
+}
+.paintCanvas {
 	border: 1px solid #000;
-	background: #e0e0e0;
-	margin: 0px auto;
+	background: #999999;
+	width: 511px;
+	height: 511px;
+	overflow: auto;
 }
 #canvas { 
 	background: #fff;
 }
-.paintTools { 
+.paintTools {
 	display: inline-flex;
 }
 .paintToolSize { }

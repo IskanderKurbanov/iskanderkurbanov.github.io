@@ -9,16 +9,20 @@
 </head>
 <body>
 	<div class="paintTest">
-		<canvas id="canvas"></canvas>
+		<article class="paintCanvas">
+			<canvas id="canvas"></canvas>
+		</article>
+		
 		<aside class="paintTools">
 			<input type="color" class="colorPicker" value="#ff0000">
 			<aside class="paintToolSize">
-				<span class="sizeLable">50</span><input type="range" min="0" max="100" step="1" value="50" class="pointerSize">
-			</aside>
+				<input type="range" min="0" max="100" step="1" value="50" class="pointerSize">size:<span class="sizeLable">50</span>
+			</aside>|
 			<!--<aside class="paintToolScale">
 				<button class="scaleCanvas" data="plus">+ </button>
 				<button class="scaleCanvas" data="minus">- </button>
-			</aside>-->
+				<input type="range" min="0" max="100" step="1" value="50" class="scaleSize2">
+			</aside>|-->
 			<button class="clear">clear</button>
 			<button class="save">save</button>
 		</aside>

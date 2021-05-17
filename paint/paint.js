@@ -6,10 +6,13 @@ window.addEventListener('load', ()=>{
 	
 	let painting = false
 	let color = 'black'
+	let colorArray = ['#000000', '#ffffff']
+
+	editColorArray('#fcba03')
 
 	// resizing
-	canvas.height = 500 //window.innerHeight - 152
-	canvas.width = 500 //window.innerWidth/2
+	canvas.height = window.innerHeight - 50
+	canvas.width = window.innerWidth/2 - 10
 
 	// FUNCS
 
@@ -37,18 +40,8 @@ window.addEventListener('load', ()=>{
 		cntx.stroke()
 		cntx.beginPath()
 		cntx.moveTo(e.layerX, e.layerY)
-		console.log(cntx)
 	}
-/*
-	function resizeCanvas(data){
-		let w2, h2
-		if(data=='plus') w2= canvas.width*2, h2= canvas.height*2;
-		else w2= canvas.width/2, h2= canvas.height/2;
-		canvas.width= w2;
-		canvas.height= h2;
-		//redrawAll()
-	}
-*/
+
 	function saveTest(){
 		let dataURL = canvas.toDataURL("image/png");
 		let newTab = window.open('about:blank','image from canvas');
@@ -62,9 +55,26 @@ window.addEventListener('load', ()=>{
 		cntx.fillRect(0,0,canvas.width, canvas.height)
 	}
 
-	paint.querySelectorAll('.scaleCanvas').forEach(i=>{
-		i.addEventListener('click', ()=>{
-			resizeCanvas(i.getAttribute('data'))
+	function editColorArray(color){
+		if(!colorArray.includes(color)){
+			if(colorArray.length <= 3)
+				colorArray.unshift(color)
+			else {
+				colorArray.pop()
+				colorArray.unshift(color)
+			}
+			
+			let cA = ''
+			colorArray.forEach(color=>cA += `<div class="colorBlockArr" style="background:${color};" data="${color}"></div>`)
+			paint.querySelector('.colorPickerArr').innerHTML = cA
+		}
+	}
+
+	paint.querySelector('.colorPickerArr').addEventListener('pointerover', ()=>{
+		paint.querySelectorAll('.colorBlockArr').forEach(i=>{
+			i.addEventListener('click', ()=>{
+				paint.querySelector('.colorPicker').value = i.getAttribute('data')
+			})
 		})
 	})
 
@@ -73,9 +83,37 @@ window.addEventListener('load', ()=>{
 	paint.querySelector('.save').addEventListener('click', saveTest)
 
 	canvas.addEventListener('pointerdown', startPosition)
-	canvas.addEventListener('pointerup', endPosition)
+	canvas.addEventListener('pointerup', ()=>{
+		endPosition()
+		editColorArray(paint.querySelector('.colorPicker').value)
+	})
 	canvas.addEventListener('pointermove', draw)
 	canvas.addEventListener('pointerout', endPosition)
 
 	clearCanvas()
+
 })
+
+
+url = 'https://knd-logs.herokuapp.com/art'
+function sendRequest(method='GET', url) {
+  return fetch(url).then(response => response.json())
+}
+
+function create_comp(data) {
+	const paint = document.querySelector('.paintTest')
+	paint.querySelector('#originalPaint').innerHTML = `<aside class="originPicBlock">
+														<img src="${data.img}">
+														<p>
+															<a target="_blank" href="${data.artist.wikidata}">${data.artist.name}</a>.
+															${data.date}.
+															<a target="_blank" href="${data.imgHD}">HD img</a>.
+														</p>
+														<button onclick="sR()">next</button>
+														</aside>`
+}
+
+function sR(){
+	sendRequest('GET', url).then(data=>create_comp(data))
+}
+sR()

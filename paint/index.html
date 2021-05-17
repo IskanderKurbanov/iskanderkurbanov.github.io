@@ -4,28 +4,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=0.9 user-scalable=no">
 	<link rel="shortcut icon" href="../img/IK.svg" type="image/png">
 
-	<title>paint test</title>
+	<title>paint trainer</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div class="paintTest">
-		<article class="paintCanvas">
-			<canvas id="canvas"></canvas>
-		</article>
+		<div id="drawPaint">
+			<article class="paintCanvas">
+				<canvas id="canvas"></canvas>
+			</article>
+
+			<aside class="paintTools">
+				<input type="color" class="colorPicker" value="#ff0000">
+				<div class="colorPickerArr">
+					
+				</div>
+				<aside class="paintToolSize">
+					<input type="range" min="0" max="100" step="1" value="5" class="pointerSize">size:<span class="sizeLable">5</span>
+				</aside>
+				<button class="clear">clear</button>
+				<button class="save">save</button>
+			</aside>
+		</div>
 		
-		<aside class="paintTools">
-			<input type="color" class="colorPicker" value="#ff0000">
-			<aside class="paintToolSize">
-				<input type="range" min="0" max="100" step="1" value="50" class="pointerSize">size:<span class="sizeLable">50</span>
-			</aside>|
-			<!--<aside class="paintToolScale">
-				<button class="scaleCanvas" data="plus">+ </button>
-				<button class="scaleCanvas" data="minus">- </button>
-				<input type="range" min="0" max="100" step="1" value="50" class="scaleSize2">
-			</aside>|-->
-			<button class="clear">clear</button>
-			<button class="save">save</button>
-		</aside>
+		<div id="originalPaint">
+			
+		</div>
 	</div>
 	<script src="paint.js" type="text/javascript"></script>
 </body>

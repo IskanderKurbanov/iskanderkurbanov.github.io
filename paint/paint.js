@@ -39,7 +39,7 @@ window.addEventListener('load', ()=>{
 		cntx.moveTo(e.layerX, e.layerY)
 		console.log(cntx)
 	}
-
+/*
 	function resizeCanvas(data){
 		let w2, h2
 		if(data=='plus') w2= canvas.width*2, h2= canvas.height*2;
@@ -48,7 +48,7 @@ window.addEventListener('load', ()=>{
 		canvas.height= h2;
 		//redrawAll()
 	}
-
+*/
 	function saveTest(){
 		let dataURL = canvas.toDataURL("image/png");
 		let newTab = window.open('about:blank','image from canvas');

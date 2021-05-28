@@ -1,54 +1,69 @@
 * { margin: 0px; padding: 0px; }
 
 
-.paintTest {
-	width: 100%;
-	height: 100%;
-	//margin: 0px auto;
-	display: inline-flex;
-}
-.paintCanvas {
-	border: 1px solid #000;
-	background: #999999;
-	overflow: auto;
-}
-#drawPaint {
-	width: 50%;
-}
-#canvas {  }
-#originalPaint { 
-	width: 50%;
-}
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-.paintTools {
-	height: 30px;
-	display: inline-flex;
-}
-.colorPickerArr {
-	//border:1px solid #000;
-	display: inline-flex;
-	margin: 5px;
-}
-.colorBlockArr {
-	margin: 1px;
-	width:15px;
-	height:15px;
-}
-.originPicBlock {
-	width: 80%;
-	height: 80%;
-	margin: 0px auto;
-}
-input, button {margin: 5px;}
-
 canvas {
 	touch-action: none;
 }
 
 @media (max-width: 1200px) {
-	#canvas, .paintTools { width: 100%;}
-	body {overflow: auto;}
+	.paintTest {
+		display: none;
+	}
+	.warning-block {
+		width: 200px;
+		display: block;
+		margin: 50% auto 0px auto;
+	}
+	.warning-block span {
+		padding: 2px 4px;
+		background: #000;
+		color: #fff;
+	}
+}
+@media (min-width: 1200px) {
+
+	.paintTest {
+		width: 100%;
+		height: 100%;
+		//margin: 0px auto;
+		display: inline-flex;
+	}
+	#drawPaint, #originalPaint { width: 50%;height: 100%; }
+
+	.paintCanvas {
+		border: 1px solid #000;
+		background: #999999;
+		overflow: auto;
+	}
+	#canvas {  }
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+	.paintTools {
+		height: 30px;
+		display: inline-flex;
+	}
+	.colorPickerArr {
+		//border:1px solid #000;
+		display: inline-flex;
+		margin: 5px;
+	}
+	.colorBlockArr {
+		margin: 1px;
+		width:15px;
+		height:15px;
+	}
+	.originPicBlock {
+		width: 80%;
+		height: 95%;
+		margin: 0px auto;
+	}
+	input, button {margin: 5px;}
+
+	.warning-block {
+		display: none;
+	}
+
 }

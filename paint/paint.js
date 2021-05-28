@@ -5,6 +5,7 @@ window.addEventListener('load', ()=>{
 	const cntx = canvas.getContext('2d')
 	
 	let painting = false
+	let colorPickerP = false
 	let color = 'black'
 	let colorArray = ['#000000', '#ffffff']
 
@@ -70,6 +71,18 @@ window.addEventListener('load', ()=>{
 		}
 	}
 
+	function startSearchColor() {
+		colorPickerP = true
+	}
+
+	function colorPickerPipetka(e){
+		if(colorPickerP) {
+			let data = cntx.getImageData(e.layerX, e.layerY, 1, 1).data;
+    		alert('rgb: ' + [].slice.call(data, 0, 3).join());
+    		colorPickerP = false
+		}
+	}
+
 	paint.querySelector('.colorPickerArr').addEventListener('pointerover', ()=>{
 		paint.querySelectorAll('.colorBlockArr').forEach(i=>{
 			i.addEventListener('click', ()=>{
@@ -81,6 +94,7 @@ window.addEventListener('load', ()=>{
 	paint.querySelector('.pointerSize').oninput = ()=>paint.querySelector('.sizeLable').innerHTML = paint.querySelector('.pointerSize').value
 	paint.querySelector('.clear').addEventListener('click', clearCanvas)
 	paint.querySelector('.save').addEventListener('click', saveTest)
+	paint.querySelector('.pipetka').addEventListener('click', startSearchColor)
 
 	canvas.addEventListener('pointerdown', startPosition)
 	canvas.addEventListener('pointerup', ()=>{
@@ -100,7 +114,7 @@ function sendRequest(method='GET', url) {
   return fetch(url).then(response => response.json())
 }
 
-function create_comp(data) {
+function create_comp(data, searchWord) {
 	const paint = document.querySelector('.paintTest')
 	paint.querySelector('#originalPaint').innerHTML = `<aside class="originPicBlock">
 														<img src="${data.img}">
@@ -109,11 +123,19 @@ function create_comp(data) {
 															${data.date}.
 															<a target="_blank" href="${data.imgHD}">HD img</a>.
 														</p>
-														<button onclick="sR()">next</button>
+														<input class="originalPaintSearch" type="text" value="${searchWord}">
+														<button onclick="searchButtom()">next</button>
 														</aside>`
 }
 
-function sR(){
-	sendRequest('GET', url).then(data=>create_comp(data))
+function searchButtom(){
+	sR(document.querySelector('.originalPaintSearch').value)
+}
+
+function sR(searchWord="draw"){
+	if(searchWord!="draw"){
+		base_url = url+'/'+searchWord
+	}else {base_url=url}
+	sendRequest('GET', base_url ).then(data=>create_comp(data, searchWord))
 }
 sR()

@@ -25,7 +25,6 @@
 
 	--contentWidth: 85%;
 
-
     --backgroundLight: #b5b5b5;
     --backgroundRGBALight: rgba(210, 210, 210, 0.5);
     --textColorLight:#000;
@@ -63,66 +62,13 @@ a {
     animation: spin-loadBar 2s infinite ease;
 }
 
-.weatherInput {
-    padding: 8px 5px;
-    color:var(--textColor);
-    background:var(--background);
-    border:0px;
-    outline:none;
-    border-bottom: 1px solid var(--textColor);
-}
-.weatherBlock {
-    text-align:center;
-    border-radius: 10px;
-    position: fixed;
-    padding:10px;
-    max-width: 190px;
-    top: 50%;
-    left: 50%;
-    margin-top: -120px;
-    margin-left: -98px;
-    background-color:var(--backgroundRGBA);
-    color:var(--textColor);
-    animation:opacity-normal .5s;
-}
-.weatherBlockExt{
-    text-align:center;
-    border-radius: 5px;
-    position: fixed;
-    padding:10px;
-    min-width: 92%;
-    min-height: 95%;
-    top: 1%;
-    left: 2%;
-    background-color: rgba(45, 45, 45, 1) ;
-    color:var(--textColor);
-}
-.weatherBlock .timer{font-size:42px;border-top:1px solid white;}
-.weatherBlockExt .timer{font-size:15vw;border-top:1px solid white;}
-.weatherBlockExt .timerSecond {font-size:6vw}.weatherBlock .timerSecond{font-size:30px;}
-.anchorBtn, .anchorDrgBtn, .anchorExtBtn{width:10px;height:10px;border-radius:50%;}
-.anchorExtBtn{margin-left:auto;background:#66d453;}
-.anchorDrgBtn{margin-left:5px;background:#03fcf8;}
-.anchorBtn{margin-left:5px;background:#d45b53;}
 
 .portfolio {
-    min-height: 300px;
     font-size: 40px;
     padding: 80px 0px;
 }
-.portfolio .FAG_tools{ border-bottom: 1px solid var(--textColor); }
 
-.next_img {
-    width: 50px;height: 50px;
-    //border:1px solid #000;
-    //border-radius: 50%;
-    font-size: 50px;
-    position: fixed;
-    top:50%;
-    padding: 0px;
-    //background: var(--backgroundRGBA);
-}
-.sketches {width: 100%; height: 500px;}
+
 
 @media (min-width: 1200px) {
     .app {
@@ -132,6 +78,7 @@ a {
     }
 
     .app__name {
+        font-family: var(--fontFamily);
         font-size: var(--titleFontSize);
         padding: 60px 0px 90px 0px;
     }
@@ -193,7 +140,6 @@ a {
     .app__foot, .app__qrcode { height: 148px; }
 
     .portfolio {}
-    .next_img { left:95%; }
 }
 
 
@@ -212,6 +158,7 @@ a {
     }
 
     .app__name {
+        font-family: var(--fontFamily);
         font-size: var(--mobileTitleFontSize);
         padding: 40px 0px 60px 0px;
     }
@@ -269,9 +216,5 @@ a {
     }
 
     .portfolio { text-align: center; }
-    .next_img{ left:90%; }
 }
-
-/*  COLORs  */
-
 

@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
 @keyframes opacity-normal { 0% {opacity: 0;} 100% {opacity: 1;} }
+@keyframes extension-normal { 0% {width: 0%;} 100% {width: 100%;} }
 @keyframes spin-loadBar { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 * {
@@ -19,6 +20,8 @@
     --mobileTitleFontSize:10vw;
 	--textFontSize:18px;
 	--fontFamily: 'Roboto', sans-serif;
+
+    --textIconSize: 22px;
 
 	--desktopScreen:1200px;
 	--tabletScreen:768px;
@@ -44,7 +47,7 @@ body {
 
 a {
     color: var(--textColor);
-    font-size: var(--textFontSize:);
+    //font-size: var(--textFontSize);
 }
 
 .app__foot-year a { text-decoration: none; }
@@ -101,8 +104,26 @@ a {
         padding: 25px 0px 5px 0px;
         text-align: center;
         width: 45%;
+        min-height: 28px;
         margin: 0px auto;
-        border-bottom: 1px solid var(--textColor)
+        border-bottom: 1px solid var(--textColor);
+    }
+    .app__skill-icon {
+        width: var(--textIconSize);
+        height: var(--textIconSize);
+        margin: auto auto;
+    }
+    .app__skill-box:hover .app__skill-icon {
+        display: none;
+    }
+    .app__skill-text {
+        display: none;
+        overflow: hidden;
+        margin: 0px auto;
+    }
+    .app__skill-box:hover .app__skill-text {
+        display: block;
+        animation: extension-normal 1.5s;
     }
 
     .app__skill-description {
@@ -181,6 +202,10 @@ a {
         width: 45%;
         margin: 0px auto;
         border-bottom: 1px solid var(--textColor)
+    }
+    .app__skill-icon {
+        width: 16px;
+        height: 16px;
     }
 
     .app__skill-description {

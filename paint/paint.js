@@ -125,6 +125,7 @@ function create_comp(data, searchWord) {
 														</p>
 														<input class="originalPaintSearch" type="text" value="${searchWord}">
 														<button onclick="searchButtom()">next</button>
+														<p>!anatomy</p>
 														</aside>`
 }
 

@@ -9,7 +9,7 @@ data_json = {
   "city": "Bugul'ma",
   "weather": {
     "feels_like": 287.26-273.15,
-    "temp": 287.33-273.15),
+    "temp": 287.33-273.15,
     "main": "Clouds",
     "description": "overcast clouds",
     "icon": "http://openweathermap.org/img/wn/04n@2x.png",

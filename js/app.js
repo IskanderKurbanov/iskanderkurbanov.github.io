@@ -52,9 +52,13 @@ function parseData(data){
 
 sendRequest('GET', URL)
   .then(data => {
+    parseData(data)
+    loadContentDone()
+  }).catch(function(error) {
+    console.error("Promise rejected with error:", error);
     parseData(data_json)
     loadContentDone()
-  })
+  });
 
 
 

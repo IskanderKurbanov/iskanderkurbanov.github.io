@@ -4,6 +4,19 @@ const infoLists = document.querySelectorAll('.list')
 const app = document.querySelectorAll('.app__skill-box')
 app.forEach(el=>el.style.display ="none")
 
+data_json = {
+  "country": "RU",
+  "city": "Bugul'ma",
+  "weather": {
+    "feels_like": 287.26-273.15,
+    "temp": 287.33-273.15),
+    "main": "Clouds",
+    "description": "overcast clouds",
+    "icon": "http://openweathermap.org/img/wn/04n@2x.png",
+  },
+  "time": "time"
+}
+
 // weather urls
 const localUrl = 'http://localhost:5000/w/'
 const worldUrl = 'https://knd-logs.herokuapp.com/w/'
@@ -39,7 +52,7 @@ function parseData(data){
 
 sendRequest('GET', URL)
   .then(data => {
-    parseData(data)
+    parseData(data_json)
     loadContentDone()
   })
 
